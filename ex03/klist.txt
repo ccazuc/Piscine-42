@@ -1,0 +1,5 @@
+Credentials cache: API:9CFEFFEF-187F-4B14-B532-FC3ADD9A12F7
+        Principal: ccazuc@42.FR
+
+  Issued                Expires             Flags    Principal
+Jul  3 14:18:12 2017  Jul 10 14:18:05 2017  FPIA   krbtgt/42.FR@42.FR
