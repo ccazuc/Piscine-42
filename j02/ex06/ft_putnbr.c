@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 10:49:02 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/05 12:11:38 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/05 17:28:06 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,64 +19,51 @@ int		ft_putchar(char c)
 	return (0);
 }
 
-void ft_print_comb2()
+void	print_min_value(void)
 {
-	char i;
-	char j;
-	char k;
-	int l;
-	char bol;
+	ft_putchar('-');
+	ft_putchar('2');
+	ft_putchar('1');
+	ft_putchar('4');
+	ft_putchar('7');
+	ft_putchar('4');
+	ft_putchar('8');
+	ft_putchar('3');
+	ft_putchar('6');
+	ft_putchar('4');
+	ft_putchar('8');
+}
 
-	i = '0';
-	j = '0';
-	k = '0';
-	l = '1';
-	while(i <= '9')
+void	ft_putnbr(int nb)
+{
+	int		tmp;
+	int		length;
+
+	if (nb == -2147483648)
 	{
-		j = '0';
-		while(j <= '8')
-		{
-			k = '0';
-			//l = j+1;
-			k = i;
-			while(k <= '9')
-			{
-				l = '0';
-				if(bol == 1)
-				{
-					bol = 0;
-					l = j+1;
-					k = i;
-				}	
-				while(l <= '9')
-				{
-					if(!(i == '0' && j == '0' && k == '0' && l == '0'))
-					{
-						ft_putchar(i);
-						ft_putchar(j);
-						ft_putchar(' ');
-						ft_putchar(k);
-						ft_putchar(l);
-						if(!(i == '9' && j == '8' && k == '9' && l == '9'))
-						{
-							ft_putchar(',');
-							ft_putchar(' ');
-						}
-					}
-					l++;
-				}
-				k++;	
-			}
-			bol = 1;
-			j++;
-		}
-		i++;
+		print_min_value();
+		return ;
+	}
+	length = 1;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	tmp = nb;
+	while ((tmp = (tmp / 10)) > 0)
+		length *= 10;
+	tmp = nb;
+	while (length)
+	{
+		ft_putchar((tmp / length) + '0');
+		tmp %= length;
+		length /= 10;
 	}
 }
 
-int 	main()
+int		main(void)
 {
-	ft_print_comb2();
+	ft_putnbr(-0);
 	return (0);
 }
-	
