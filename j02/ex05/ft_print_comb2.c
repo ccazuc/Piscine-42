@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 10:49:02 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/05 16:49:04 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/05 16:53:31 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ int		ft_putchar(char c)
 	return (0);
 }
 
-void	ft_print_value(char i, char j, char k, char l)
+void	ft_print_value(char *table)
 {
-	if (!(i == '0' && j == '0' && k == '0' && l == '0'))
+	if (!(table[0] == '0' && table[1] == '0' && table[2] == '0' && table[3] == '0'))
 	{
-		ft_putchar(i);
-		ft_putchar(j);
+		ft_putchar(table[0]);
+		ft_putchar(table[1]);
 		ft_putchar(' ');
-		ft_putchar(k);
-		ft_putchar(l);
-		if (!(i == '9' && j == '8' && k == '9' && l == '9'))
+		ft_putchar(table[2]);
+		ft_putchar(table[3]);
+		if (!(table[0] == '9' && table[1] == '8' && table[2] == '9' && table[3] == '9'))
 		{
 			ft_putchar(',');
 			ft_putchar(' ');
@@ -48,7 +48,7 @@ void	ft_loop(char *table, char *bol)
 		}
 		while (table[3] <= '9')
 		{
-			ft_print_value(table[0], table[1], table[2], table[3]);
+			ft_print_value(table);
 			table[3]++;
 		}
 		table[2]++;
