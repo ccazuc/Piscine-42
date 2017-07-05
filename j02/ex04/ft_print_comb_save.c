@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 10:49:02 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/05 13:17:51 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/05 14:46:31 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ void	ft_print_comb(void)
 
 int		main(void)
 {
-	ft_is_print_comb();
+	ft_print_comb();
 	return (0);
 }
