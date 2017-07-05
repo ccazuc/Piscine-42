@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 10:49:02 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/05 16:53:31 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/05 19:13:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_print_comb2(void)
 	while (table[0] <= '9')
 	{
 		table[1] = '0';
-		while (table[1] <= '8')
+		while (table[1] <= '9')
 		{
 			table[2] = table[0];
 			ft_loop(table, &bol);
