@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 10:53:28 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/05 10:53:30 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/05 13:02:29 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,19 @@ int		ft_putchar(char c)
 	return (0);
 }
 
-void ft_print_reverse_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
 	char c;
 
-	c = 'z'+1;
-	while(--c >= 'a')
+	c = 'z' + 1;
+	while (--c >= 'a')
 	{
 		ft_putchar(c);
 	}
 }
 
-int 	main()
+int		main(void)
 {
 	ft_print_reverse_alphabet();
 	return (0);
 }
-	

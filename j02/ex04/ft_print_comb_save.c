@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 10:53:56 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/05 13:12:26 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/05 10:49:02 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/05 13:17:51 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,41 @@ int		ft_putchar(char c)
 	return (0);
 }
 
-void	ft_is_negative(int n)
+void	ft_print_comb(void)
 {
-	char c;
+	char i;
+	char j;
+	char k;
 
-	c = c >= 0 ? 'P' : 'N';
-	ft_putchar(c);
+	i = '0';
+	j = '1';
+	k = '2';
+	while (i <= '7')
+	{
+		j = i + 1;
+		while (j <= '8')
+		{
+			k = j + 1;
+			while (k <= '9')
+			{
+				ft_putchar(i);
+				ft_putchar(j);
+				ft_putchar(k);
+				if (!(i == '7' && j == '8' && k == '9'))
+				{
+					ft_putchar(',');
+					ft_putchar(' ');
+				}
+				k++;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
 int		main(void)
 {
-	ft_is_negative(-1);
+	ft_is_print_comb();
 	return (0);
 }
