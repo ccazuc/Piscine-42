@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 17:34:22 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/05 20:21:16 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/05 20:28:38 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_print_combn(int n)
 	i = 0;
 	while (i < max_value)
 	{
-		printf("%d", is_correct_value(i, n));
+		// printf("%d", is_correct_value(i, n));
 		if (is_correct_value(i, n))
 		{
 			ft_putnbr(i, n);
@@ -56,6 +56,7 @@ int		is_correct_value(int value, int total_length)
 	
 	i = 0;
 	char first_char = get_n_value(value, 0, total_length);
+	// printf("%d %d \n", value, first_char);
 	while (i < total_length)
 		if (get_n_value(value, i, total_length) <= first_char)
 			return (0);
@@ -75,9 +76,7 @@ int 	get_n_value(int value, int n, int total_length)
 {
 	int		i;
 	
-	i = total_length + 1;
-	while (--i > n)
-		value /= 10;
+	ft_putnbr(value, n);
 	return (value % 10);
 }
 
@@ -101,6 +100,6 @@ void	ft_putnbr(int nb, int n)
 
 int		main(void)
 {
-	ft_print_combn(4);
+	ft_print_combn(2);
 	return (0);
 }
