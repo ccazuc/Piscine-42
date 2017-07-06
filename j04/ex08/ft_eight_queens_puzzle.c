@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 20:05:41 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 20:29:58 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 20:34:19 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,25 @@ int		ft_eight_aueens_puzzle(void)
 		while (j < 8)
 			table[i][j] = 0;
 
+} 
+
+
+int     check_diagonale(int table[8][8], int x, int y)
+{
+	int     i;
+	int     j;
+
+	i = x;
+	j = y;
+	while (i-- > 0 && j++ < 8)
+		if (table[i][j] == 1)
+			return (0);
+	i = x;
+	j = y;
+   	while (++i < 8 && --j > 0)
+		if (table[i][j] == 1)
+			return (0);
+	return (1);
 }
 
 int		is_correct_pos(int table[8][8], int x, int y)
