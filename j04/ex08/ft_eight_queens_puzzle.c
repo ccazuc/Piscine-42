@@ -6,26 +6,11 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 20:05:41 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 20:34:19 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 20:38:22 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_eight_aueens_puzzle(void)
-{
-	int		table[8][8];
-	int		i;
-	int		j;
-
-	i = -1;
-	j = -1;
-	while (i < 8)
-		while (j < 8)
-			table[i][j] = 0;
-
-} 
-
+#include <stdio.h> 
 
 int     check_diagonale(int table[8][8], int x, int y)
 {
@@ -71,20 +56,15 @@ int		is_correct_pos(int table[8][8], int x, int y)
 	return (check_diagonale(table, x, y));	
 }
 
-int		check_diagonale(int table[8][8], int x, int y)
+int     ft_eight_aueens_puzzle(void)
 {
-	int		i;
-	int		j;
+	int     table[8][8];
+	int     i;
+	int     j;
 
-	i = x;
-	j = y;
-	while (i-- > 0 && j++ < 8)
-		if (table[i][j] == 1)
-			return (0);
-	i = x;
-	j = y;
-	while (++i < 8 && --j > 0)
-		if (table[i][j] == 1)
-			return (0);
-	return (1);
+    i = -1;
+    j = -1;
+    while (i < 8)
+		while (j < 8)
+            table[i][j] = 0;
 }
