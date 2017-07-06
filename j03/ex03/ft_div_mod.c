@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 11:01:02 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 11:05:35 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 16:03:30 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
 	if (b == 0)
-		return;
+		return ;
 	*div = a / b;
 	*mod = a % b;
 }

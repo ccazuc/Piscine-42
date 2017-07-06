@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 11:40:39 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 11:55:11 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 16:14:14 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strrev(char *str)
 {
-	if(str == NULL)
-		return str;
 	int		len;
 	int		i;
 	char	tmp;
 
+	if (str == NULL)
+		return (0);
 	len = 0;
 	i = 0;
 	while (str[len])
@@ -31,9 +31,9 @@ char	*ft_strrev(char *str)
 		str[i] = str[len];
 		str[len] = tmp;
 		i++;
-		len--;		
+		len--;
 	}
-	return str;
+	return (str);
 }
 
 int		main(void)

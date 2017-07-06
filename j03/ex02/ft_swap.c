@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 10:55:10 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 10:57:39 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 16:03:13 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_swap(int *a, int *b)
 {
-	int tmp = *a;
+	int tmp;
+
+	tmp = *a;
 	*a = *b;
 	*b = tmp;
 }
@@ -26,7 +28,6 @@ int		main(void)
 
 	a = 1;
 	b = 2;
-
 	ft_swap(&a, &b);
 	printf("a: %d, b: %d", a, b);
 }

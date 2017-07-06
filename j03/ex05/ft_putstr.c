@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 11:11:21 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 11:25:28 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/06 16:07:26 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/06 16:07:56 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,16 @@ int		ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	if(str == NULL)
-		return;
 	int		i;
 
+	if (str == NULL)
+		return ;
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		ft_putchar(str[i]);
 		i++;
 	}
-		
 }
 
 int		main(void)

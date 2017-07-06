@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 15:51:39 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 16:00:44 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 16:19:08 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_sort_integer_table(int *tab, int size)
 	int		i;
 	int		j;
 	int		tmp;
-	
+
 	if (tab == NULL)
 		return ;
 	i = -1;
@@ -31,10 +31,9 @@ void	ft_sort_integer_table(int *tab, int size)
 			{
 				tmp = tab[j];
 				tab[j] = tab[i];
-				tab[i] = tmp;			
+				tab[i] = tmp;
 			}
-
-		}	
+		}
 	}
 	i = -1;
 	while (++i < size)

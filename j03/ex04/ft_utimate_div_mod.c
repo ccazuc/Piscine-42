@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 11:06:27 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 11:10:37 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 16:05:05 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
-	if(*b == 0)
-		return;
 	int		tmp_div;
 	int		tmp_mod;
 
+	if (*b == 0)
+		return ;
 	tmp_div = *a / *b;
 	tmp_mod = *a % *b;
 	*a = tmp_div;
