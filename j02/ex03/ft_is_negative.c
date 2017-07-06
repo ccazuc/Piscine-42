@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 10:53:56 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/05 13:12:26 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 10:41:07 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ int		ft_putchar(char c)
 
 void	ft_is_negative(int n)
 {
-	char c;
-
-	c = c >= 0 ? 'P' : 'N';
-	ft_putchar(c);
+	n >= 0 ? ft_putchar('P') : ft_putchar('N');
 }
 
 int		main(void)
