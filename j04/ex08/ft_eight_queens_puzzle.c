@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 20:05:41 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 20:49:55 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 20:56:00 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,19 @@ int		is_correct_pos(int table[8][8], int x, int y)
 
 int		recurse(table[8][8])
 {
-			
+	int		i;
+	int		j;
+	int		nb_correct_chess;
+
+	i = -1;
+	j = -1;
+	while (++i < 8)
+	{
+		j = -1;
+		while (++j < 8)
+			if (place_dame(table, i, j)
+					nb_correct_chess++;
+	}
 }
 
 int     ft_eight_aueens_puzzle(void)
@@ -66,9 +78,7 @@ int     ft_eight_aueens_puzzle(void)
 	int     table[8][8];
 	int     i;
 	int     j;
-	int		nb_dame;
 
-	nb_dame = 8;
     i = -1;
     j = -1;
     while (i < 8)
