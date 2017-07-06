@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 20:05:41 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 20:38:22 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/06 20:49:55 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,20 @@ int		is_correct_pos(int table[8][8], int x, int y)
 			return (0);
 	i = x;
 	j = y;
-	while(++i < 8 && ++j < 8)
+	while (++i < 8 && ++j < 8)
 		if (table[i][j] == 1)
 			return (0);
-	i = x - 1;
-	j = y - 1;
+	i = x;
+	j = y;
 	while (--i > 0 && --j > 0)
 		if (table[i][j] == 1)
 			return (0);
 	return (check_diagonale(table, x, y));	
+}
+
+int		recurse(table[8][8])
+{
+			
 }
 
 int     ft_eight_aueens_puzzle(void)
@@ -61,10 +66,13 @@ int     ft_eight_aueens_puzzle(void)
 	int     table[8][8];
 	int     i;
 	int     j;
+	int		nb_dame;
 
+	nb_dame = 8;
     i = -1;
     j = -1;
     while (i < 8)
 		while (j < 8)
             table[i][j] = 0;
+	return (recurse(table));
 }
