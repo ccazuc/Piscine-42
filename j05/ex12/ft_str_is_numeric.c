@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/07 12:02:35 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/07 12:24:30 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/07 12:32:40 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_is_numeric(char	*str)
 
 int		main(void)
 {
-	char	str[] = "5551";
+	char	str[] = "";
 
 	printf("%d", ft_is_numeric(str));
 	return (0);
