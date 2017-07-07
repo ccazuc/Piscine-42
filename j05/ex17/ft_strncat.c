@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 13:51:42 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/07 15:05:04 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/07 14:52:40 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/07 15:16:00 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, int nb)
 {
 	int		i;
 	int		dest_len;
 
 	dest_len = ft_strlen(dest);
 	i = - 1;
-	while(src[++i])
+	while(src[++i] && i < nb)
 		dest[dest_len + i] = src[i];
 	dest[dest_len + i] = '\0';
 	return (dest);
@@ -38,9 +38,9 @@ char	*ft_strcat(char *dest, char *src)
 
 int		main(void)
 {
-	char	str1[] = "Ceci est  \0                 ";
-	char	str2[] = "un test.";
-	printf("%s\n", strcat(str1, str2));
-	printf("%s", ft_strcat(str1, str2));	
+	char	str1[] = "Ceci est\0                           ";
+	char	str2[] = "abcdefghij";
+	printf("%s\n", strncat(str1, str2, 0));
+	printf("%s", ft_strncat(str1, str2, 4));
 	return (0);
 }
