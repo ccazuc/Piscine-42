@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 12:41:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/07 13:13:33 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/07 13:51:42 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/07 14:38:05 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-char	is_upper(char c)
-{
-	return ((c >= 'A' && c <= 'Z') ? 1 : 0);
-}
-
-int		ft_str_is_uppercase(char *str)
+int		ft_strlen(char *str)
 {
 	int		i;
+	
+	i = 0;
+	while (str[i])
+		++i;
+	return (i);
+}
 
-	if (str == NULL)
-		return (0);
-	i = -1;
-	while (str[++i])
-		if (!is_upper(str[i]))
-			return (0);
-	return (1);
+char	*ft_strcat(char *dest, char *src)
+{
+	int		i;
+	int		dest_len;
+
+	dest_len = ft_strlen(dest);
+	i = - 1;
+	while(src[++i])
+		dest[dest_len + i] = src[i];
+	dest[dest_len + i] = '\0';
+	return (dest);
 }
 
 int		main(void)
 {
-	char	str[] = "AADIJACNZOSDIKD";
-
-	printf("%d", ft_str_is_uppercase(str));
+	char	str1[] = "Ceci est \0                   ";
+	char	str2[] = "un test.";
+	printf("%s\n", strcat(str1, str2));
+	printf("%s", ft_strcat(str1, str2));
 	return (0);
 }
