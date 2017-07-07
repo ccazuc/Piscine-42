@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 12:02:35 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/07 12:32:40 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/07 12:49:50 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/07 12:53:21 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	is_numeric(char c)
 	return ((c >= '0' && c <= '9') ? 1 : 0);
 }
 
-int		ft_is_numeric(char	*str)
+int		ft_ftr_is_numeric(char	*str)
 {
 	int		i;
 
@@ -34,6 +34,6 @@ int		main(void)
 {
 	char	str[] = "";
 
-	printf("%d", ft_is_numeric(str));
+	printf("%d", ft_str_is_numeric(str));
 	return (0);
 }

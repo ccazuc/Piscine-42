@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 12:02:35 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/07 12:31:28 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/07 12:51:23 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/07 12:51:57 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	is_alpha(char c)
 			 ? 1 : 0);	
 }
 
-int		ft_is_alpha(char	*str)
+int		ft_str_is_alpha(char *str)
 {
 	int		i;
 
@@ -35,6 +35,6 @@ int		main(void)
 {
 	char	str[] = "";
 
-	printf("%d", ft_is_alpha(str));
+	printf("%d", ft_str_is_alpha(str));
 	return (0);
 }
