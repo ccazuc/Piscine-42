@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 13:19:34 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/08 15:23:33 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/08 15:29:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,11 @@ void	draw_line(int total_len, int line_len)
 	ft_putchar('\n');
 }
 
+void	draw_door(int total_len, int line_len, int size)
+{
+	
+}
+
 void	sastantua(int size)
 {
 	int		stage_nb;
@@ -80,7 +85,7 @@ void	sastantua(int size)
 	stage_height = 3;
 	line_len = 3;
 	stage_len_offset = 4;
-	while (++stage_nb <= size)
+	while (++stage_nb < size)
 	{
 		stage_line = 0;
 		while (++stage_line <= stage_height)
@@ -90,6 +95,8 @@ void	sastantua(int size)
 		}
 		line_len += (stage_nb % 2 == 1 ? stage_len_offset : (stage_len_offset += 2));
 		stage_height++;
+		if (stage_height == size)
+			draw_door(total_len, line_len, size);
 	}
 }
 
