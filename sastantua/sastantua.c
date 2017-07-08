@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 13:19:34 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/08 18:07:00 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/08 18:42:11 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,14 @@ int		get_total_length(int size)
 	{
 		stage_line = 0;
 		while (++stage_line < stage_height)
-			line_len += 2;
-		if (stage_nb < size)
+				line_len += 3;
+		if (stage_nb < size - 1)
 			line_len += (((stage_nb)  % 3 == 0) ? stage_len_offset
 				: (stage_len_offset += 2));
 		stage_height++;
+		printf("len : %d\n", line_len);
 	}
-	return (line_len - 4);
+	return (line_len);
 }
 
 void	draw_line(int total_len, int *line_len)
@@ -60,8 +61,6 @@ void	draw_line(int total_len, int *line_len)
 			ft_putchar('*');
 		else if (i < start)
 			ft_putchar(' ');
-	ft_putchar('\n');
-	*line_len += 3;
 }
 
 void	draw_door_line(int tot_len, int *line_len, int size, int cur_line)
@@ -94,8 +93,6 @@ void	draw_door_line(int tot_len, int *line_len, int size, int cur_line)
 			ft_putchar('*');
 		else if (stag_ln < tot_len / 2 - *line_len / 2)
 			ft_putchar(' ');
-	ft_putchar('\n');
-	*line_len += 3;
 }
 
 int		draw_door(int total_len, int line_len, int size)
@@ -106,10 +103,15 @@ int		draw_door(int total_len, int line_len, int size)
 	current_line = 0;
 	door_height_offset = size % 2 == 0 ? 3 : 2;
 	while (++current_line <= size + 2)
+	{
 		if (current_line > door_height_offset)
 			draw_door_line(total_len, &line_len, size, current_line);
 		else
 			draw_line(total_len, &line_len);
+		line_len += 3;
+		ft_putchar('\n');
+	}
+	printf("door: %d\n", line_len);
 	return (0);
 }
 
@@ -133,9 +135,14 @@ void	sastantua(int size)
 			return ;
 		stage_line = 0;
 		while (++stage_line <= stage_height)
+		{
 			draw_line(total_len, &line_len);
+			line_len += 3;
+			ft_putchar('\n');
+		}
 		line_len += (((stage_nb)  % 3 == 0) ? stag_len_off : (stag_len_off += 2));
 		stage_height++;
+		printf("sas: %d\n", line_len);
 	}
 }
 
@@ -143,7 +150,7 @@ int		main(void)
 {
 	int		size;
 
-	size = 2;
+	size = 6;
 	sastantua(size);
 	return (0);
 }
