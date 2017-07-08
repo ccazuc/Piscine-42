@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 13:19:34 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/08 17:35:40 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/08 18:07:00 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,21 @@ int		get_total_length(int size)
 	int		stage_height;
 	int		stage_len_offset;
 
-	stage_nb = 0;
+	stage_nb = -1;
 	line_len = 3;
 	stage_height = 3;
 	stage_len_offset = 4;
-	while (++stage_nb <= size)
+	while (++stage_nb < size)
 	{
 		stage_line = 0;
-		while (++stage_line <= stage_height)
+		while (++stage_line < stage_height)
 			line_len += 2;
 		if (stage_nb < size)
-			line_len += ((stage_nb % 2 == 0) ? stage_len_offset
+			line_len += (((stage_nb)  % 3 == 0) ? stage_len_offset
 				: (stage_len_offset += 2));
 		stage_height++;
 	}
-	return (line_len);
+	return (line_len - 4);
 }
 
 void	draw_line(int total_len, int *line_len)
@@ -58,7 +58,7 @@ void	draw_line(int total_len, int *line_len)
 			ft_putchar('\\');
 		else if (i >= start && i <= start + *line_len)
 			ft_putchar('*');
-		else if (i < start && i > 1)
+		else if (i < start)
 			ft_putchar(' ');
 	ft_putchar('\n');
 	*line_len += 3;
@@ -79,9 +79,9 @@ void	draw_door_line(int tot_len, int *line_len, int size, int cur_line)
 	poignet_y = door_s / 2 + door_height_offset;
 	*line_len = *line_len - 1;
 	while (++stag_ln < tot_len)
-		if (stag_ln == start)
+		if (stag_ln == tot_len / 2 - *line_len / 2)
 			ft_putchar('/');
-		else if (stag_ln == start + *line_len)
+		else if (stag_ln == tot_len / 2 - *line_len / 2 + *line_len)
 			ft_putchar('\\');
 		else if (cur_line == door_s / 2 + 1 + door_height_offset && stag_ln
 				== tot_len / 2 + door_s / 2 - 1 && door_s > 3)
@@ -89,9 +89,10 @@ void	draw_door_line(int tot_len, int *line_len, int size, int cur_line)
 		else if (stag_ln >= tot_len / 2 - door_s / 2 && stag_ln <= tot_len / 2
 				+ door_s / 2)
 			ft_putchar('|');
-		else if (stag_ln >= start && stag_ln <= start + *line_len)
+		else if (stag_ln >= tot_len / 2 - *line_len / 2 && stag_ln <= 
+				tot_len / 2 - *line_len / 2 + *line_len)
 			ft_putchar('*');
-		else if (stag_ln < start && stag_ln > 1)
+		else if (stag_ln < tot_len / 2 - *line_len / 2)
 			ft_putchar(' ');
 	ft_putchar('\n');
 	*line_len += 3;
@@ -133,7 +134,7 @@ void	sastantua(int size)
 		stage_line = 0;
 		while (++stage_line <= stage_height)
 			draw_line(total_len, &line_len);
-		line_len += ((stage_nb % 2 == 0) ? stag_len_off : (stag_len_off += 2));
+		line_len += (((stage_nb)  % 3 == 0) ? stag_len_off : (stag_len_off += 2));
 		stage_height++;
 	}
 }
@@ -142,7 +143,7 @@ int		main(void)
 {
 	int		size;
 
-	size = 3;
+	size = 2;
 	sastantua(size);
 	return (0);
 }
