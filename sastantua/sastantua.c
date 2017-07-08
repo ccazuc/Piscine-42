@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 13:19:34 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/08 15:29:04 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/08 16:23:40 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,54 @@ void	draw_line(int total_len, int line_len)
 	ft_putchar('\n');
 }
 
-void	draw_door(int total_len, int line_len, int size)
+void	draw_door_line(int total_len, int line_len, int size, int current_line)
 {
+	int		door_height_offset;
+	int		door_size;
+	int		stage_line;
+	int		poignet_y;
+	int		start;
+
+	start = total_len / 2 - line_len / 2;
+	door_size = size % 2 == 0 ? size - 1 : size;
+	door_height_offset = size % 2 == 0 ? 3 : 2;
+	poignet_y = door_size / 2 + door_height_offset;
+	stage_line = -1;
+	line_len--;
+	while (++stage_line < total_len)
+		if (stage_line == start)
+			ft_putchar('/');
+		else if (stage_line == start + line_len)
+			ft_putchar('\\');
+		else if (current_line == door_size /2 + 1 + door_height_offset && stage_line
+				== total_len / 2 + 1)
+			ft_putchar('$');
+		else if(stage_line >= total_len / 2 - door_size / 2 && stage_line <= total_len / 2
+				+ door_size / 2)
+			ft_putchar('|');
+		else if(stage_line >= start && stage_line <= start + line_len)
+			ft_putchar('*');
+		else
+			ft_putchar(' ');
+	ft_putchar('\n');
+}
+
+void	draw_door(int	total_len, int	line_len, int size)
+{
+	int		current_line;
+	int		door_height_offset;
 	
+
+	current_line = 0;
+	door_height_offset = size % 2 == 0 ? 3 : 2;
+	while (++current_line <= size + 2)
+	{
+		if (current_line > door_height_offset)
+			draw_door_line(total_len, line_len, size, current_line);
+		else
+			draw_line(total_len, line_len);
+		line_len += 2;
+	}	
 }
 
 void	sastantua(int size)
@@ -95,7 +140,7 @@ void	sastantua(int size)
 		}
 		line_len += (stage_nb % 2 == 1 ? stage_len_offset : (stage_len_offset += 2));
 		stage_height++;
-		if (stage_height == size)
+		if (stage_nb == size - 1)
 			draw_door(total_len, line_len, size);
 	}
 }
