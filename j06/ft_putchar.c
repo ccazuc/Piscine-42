@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/09 13:07:41 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/09 15:44:51 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/09 15:55:01 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/09 15:56:24 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char *str);
+#include <unistd.h>
 
-int		main(void)
-{	
-	char	str[] = "Ceci est un test.";
-	ft_putstr(str);
-	return (0);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
