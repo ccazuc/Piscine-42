@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 15:59:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/09 16:05:42 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/09 19:44:52 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putstr(char *str)
 
 	i = -1;
 	while (str[++i])
-		ft_putchar(str[i]);		
+		ft_putchar(str[i]);
 }
 
 int		main(int argc, char **argv)

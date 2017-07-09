@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/09 13:07:41 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/09 19:43:24 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/09 20:16:06 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/09 20:18:13 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char *str);
+#include <libstd.h>
 
-int		main(void)
+char	*ft_strdup(char *src)
 {
-	char	str[] = "Ceci est un test.";
-	ft_putstr(str);
-	return (0);
+	void	ptr*;
+
+	ptr = malloc(sizeof src);
+	return (pr);
 }
