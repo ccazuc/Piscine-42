@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 16:08:35 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/09 17:20:58 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/09 17:24:14 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,15 @@ int		main(int argc, char **argv)
 	int		j;
 	char	*tab[argc - 1];
 	
-	i = argc;
-	while (--i	> 0)
+	i = 0;
+	while (++i < argc)
 	{
 			tab[i] = argv[i];
 	}
 	sort_table(tab, argc - 1);
 	//tab[1][0] = argv[1][0];
-	i = -1;
-	while (++i < argc)
+	i = 1;
+	while (++i <= argc)
 	{
 		ft_putstr(tab[i]);
 		ft_putchar('\n');
