@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 16:08:35 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/09 17:24:14 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/09 18:07:00 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ int		ft_strcmp(char *s1, char *s2)
 	while (s1[++i] && s2[i])
 		if (s1[i] > s2[i])
 			return (s1[i] - s2[i]);
-		else if (s1[i] < s2[i])
-			return (s1[i] - s2[i]);
 	if (s2[i])
 		return (- s2[i]);
 	if (s1[i])
@@ -38,11 +36,11 @@ int		ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-void	sort_table(char **str, int len)
+void	sort_table(char **str)
 {
 	int		i;
 	int		j;
-	char	*tmp[len];
+	char	*tmp;
 
 	i = -1;
 	j = -1;
@@ -52,9 +50,9 @@ void	sort_table(char **str, int len)
 		while (str[++j])
 			if (ft_strcmp(str[j], str[i]) > 0)
 			{
-				tmp[j] = str[j];
+				tmp = str[j];
 				str[j] = str[i];
-				str[i] = tmp[j];
+				str[i] = tmp;
 			}
 	}
 }
@@ -62,18 +60,18 @@ void	sort_table(char **str, int len)
 int		main(int argc, char **argv)
 {
 	int		i;
-	int		j;
 	char	*tab[argc - 1];
 	
 	i = 0;
 	while (++i < argc)
 	{
 			tab[i] = argv[i];
+			//ft_putstr(tab[i]);
+			//ft_putchar('\n');
 	}
-	sort_table(tab, argc - 1);
-	//tab[1][0] = argv[1][0];
-	i = 1;
-	while (++i <= argc)
+	sort_table(tab);
+	i = 0;
+	while (++i < argc)
 	{
 		ft_putstr(tab[i]);
 		ft_putchar('\n');
