@@ -6,9 +6,11 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 16:08:35 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/09 18:07:00 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/09 18:23:43 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 void	ft_putchar(char c);
 
@@ -27,8 +29,12 @@ int		ft_strcmp(char *s1, char *s2)
 
 	i = - 1;
 	while (s1[++i] && s2[i])
+	{
 		if (s1[i] > s2[i])
 			return (s1[i] - s2[i]);
+		if (s1[i] < s2[i])
+			return (s1[i] - s2[i]);
+	}
 	if (s2[i])
 		return (- s2[i]);
 	if (s1[i])
@@ -42,17 +48,16 @@ void	sort_table(char **str)
 	int		j;
 	char	*tmp;
 
-	i = -1;
-	j = -1;
+	i = 0;
 	while (str[++i])
 	{
-		j = -1;
+		j = 0;
 		while (str[++j])
 			if (ft_strcmp(str[j], str[i]) > 0)
 			{
 				tmp = str[j];
 				str[j] = str[i];
-				str[i] = tmp;
+				str[i] = tmp;	
 			}
 	}
 }
@@ -64,11 +69,7 @@ int		main(int argc, char **argv)
 	
 	i = 0;
 	while (++i < argc)
-	{
-			tab[i] = argv[i];
-			//ft_putstr(tab[i]);
-			//ft_putchar('\n');
-	}
+		tab[i] = argv[i];
 	sort_table(tab);
 	i = 0;
 	while (++i < argc)
