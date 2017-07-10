@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/10 11:52:30 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/10 12:30:25 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/10 16:11:41 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,48 +29,50 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-char	*ft_concat_params(int argc, char** argv)
+int		get_total_len(char **argv)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (argv[++i])
+	{
+		j = -1;
+		while (argv[i][++j])
+			;
+	}
+	return (i + j);
+}
+
+char	*ft_concat_params(int argc, char **argv)
 {
 	int		i;
 	int		j;
 	int		tot_len;
 	char	*result;
+	int		cur_len;
 
-	i = 0;
-	while (argv[++i])
-	{
-		j = -1;
-		//printf("debug1\n");
-		while (argv[i][++j])
-			;//printf("%c\n", argv[i][j]);
-	}
-	tot_len = i + j;
+	tot_len = get_total_len(argv);
 	result = malloc(tot_len * sizeof(*result));
 	i = 0;
-	printf("debug\n");
+	cur_len = 0;
 	while (argv[++i])
 	{
-	//	printf("debug1");
 		j = -1;
 		while (argv[i][++j])
 		{
-			result[i + j] = argv[i][j];
-			printf("result: %c", result[i + j]);
+			result[cur_len] = argv[i][j];
+			cur_len++;
 		}
-		//printf("debug2");
-		result [i + j] = '\n';
+		result[cur_len] = '\n';
+		cur_len++;
 	}
-	result[i + j] = 0;
-	i = 1;
-	while (result[++i])
-		ft_putchar(i);
+	result[cur_len] = 0;
 	return (result);
 }
 
 int		main(int argc, char **argv)
 {
-
 	ft_putstr(ft_concat_params(argc, argv));
-	//ft_concat_params(argc, argv);
 	return (0);
 }
