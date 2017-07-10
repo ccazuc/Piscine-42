@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/07 10:03:12 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/07 10:23:10 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/10 19:57:21 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(void)
 	char	str1[] = "Ceci est un test";
 	char 	str2[] = "bla blai iiiiiii00000000";
 
-	ft_strcpy(str2, str1);
+	ft_strcpy(str1, str2);
 	printf("1: %s, 2: %s", str1, str2);
 	return (0);
 }
