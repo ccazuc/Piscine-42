@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 18:38:27 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/11 19:18:21 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/11 19:34:18 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ struct s_stock_par *ft_param_to_tab(int ac, char **av)
 	s_stock_par		*stock;
 	int				i;
 
-	stock = malloc(ac * sizeof(*stock));
+	stock = malloc((ac + 1) * sizeof(*stock));
 	i = -1;
 	while (++i < ac)
 	{
@@ -49,5 +49,6 @@ struct s_stock_par *ft_param_to_tab(int ac, char **av)
 		stock[i].copy = ft_strdup(av[i]);
 		stock[i].tab = ft_split_white_spaces(av[i]);
 	}
+	stock[i] = 0;
 	return (stock);
 }
