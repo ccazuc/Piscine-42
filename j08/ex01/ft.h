@@ -6,12 +6,12 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 17:24:13 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/11 17:27:09 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/11 18:56:15 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_H
-#define FT_H
+# define FT_H
 
 void	ft_putchar(char c);
 void	ft_swap(int *a, int *b);
