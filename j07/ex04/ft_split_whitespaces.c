@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/10 16:15:48 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/11 13:43:39 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/11 15:07:29 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		get_nb_word(char *str)
 	return ((tmp == ' ' || tmp == '\n' || tmp == 9) ? nb_word : nb_word + 1);
 }
 
-void	get_n_word(char *str, char *result, int *index)
+void	get_n_word(char *str, char **result, int cur_word, int *index)
 {
 	int		len;
 	int		i;
@@ -56,18 +56,18 @@ void	get_n_word(char *str, char *result, int *index)
 		if (str[i] == ' ' || str[i] == '\n' || str[i] == 9)
 			break;
 	printf("n_word i: %d, index: %d\n", i, *index);
-	result = malloc((i - *index) * sizeof(*result));
+	result[cur_word] = malloc((i - *index + 1) * sizeof(*result));
 	i = *index - 1;
 	res_i = 0;
 	while (str[++i])
 	{
 		if (str[i] == ' ' || str[i] == '\n' || str[i] == 9)
 			break;
-		result[res_i] = str[i];
-		printf("n_word_res_i: %d, char: %c\n", res_i, result[res_i]);
+		result[cur_word][res_i] = str[i];
+		printf("n_word_res_i: %d, char: %c\n", res_i, result[cur_word][res_i]);
 		++res_i;
 	}
-	result[++res_i] = 0;
+	result[cur_word][res_i] = 0;
 	*index = i;
 	printf("n_word_last_index: %d\n", *index);
 }
@@ -82,7 +82,7 @@ char	**ft_split_whitespaces(char *str)
 	i = -1;
 	tot_word = get_nb_word(str);
 	printf("ft_split_start: %d\n", tot_word);
-	result = malloc(tot_word * sizeof(**result));
+	result = malloc((tot_word + 1) * sizeof(**result));
 	cur_word = 0;
 	printf("ft_split_loop_start\n");
 	while (str[++i] && cur_word < tot_word)
@@ -90,12 +90,12 @@ char	**ft_split_whitespaces(char *str)
 
 		if (str[i] != ' ' && str[i] != '\n' && str[i] != 9)
 		{
-			get_n_word(str, result[cur_word], &i);
+			get_n_word(str, result, cur_word, &i);
 			printf("ft_split_res: %s\n", result[cur_word]);
 			++cur_word;
 		}
 	}
-	result[cur_word] = NULL;
+	result[tot_word] = NULL;
 	printf("ft_split_end\n");
 	return (result);
 }
