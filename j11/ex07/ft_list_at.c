@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_params.c                              :+:      :+:    :+:   */
+/*   ft_list_at.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 18:55:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 20:55:08 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/12 21:05:39 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/12 21:09:40 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_push_params(int ac, char **av)
+t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	t_list	*tmp;
 	t_list	*result;
-	int		i;
+	unsigned int		i;
 
-	if (ac == 0)
-		return NULL;
-	result = ft_create_elem(av[0]);
 	i = 0;
-	while (av[++i])
+	while (begin_list && i < nbr)
 	{
-		tmp = result;
-		result = ft_create_elem(av[i]);
-		result->next = tmp;
+		begin_list = begin_list->next;
+		++i;	
 	}
-	return (first); 
+	return (i == nbr ? begin_list : 0);
 }

@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 19:22:18 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 19:55:09 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 20:59:38 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,39 @@ t_list	*ft_create_elem(void *data)
 	return (result);
 }
 
-t_list	*ft_list_last(t_list *begin_list)
+void	ft_list_push_front(t_list **begin_list, void *data)
 {
 	t_list	*list;
+	t_list	*tmp;
 
-	list = begin_list;
-	while (list->next)
-			list = list->next;
-	return list;
+	if (!begin_list)
+	{
+		*begin_list = ft_create_elem(data);
+		return ;
+	}
+	printf("push_front");
+	list = ft_create_elem(data);
+	list->next = *begin_list;
+	*begin_list = list;
+}
+
+t_list	*ft_list_push_params(int ac, char **av)
+{
+	t_list	*tmp;
+	t_list	*result;
+	int		i;
+
+	if (!ac)
+		return NULL;
+	i = 0;
+	result = ft_create_elem(av[0]);
+	while (++i < ac)
+	{
+		tmp = result;
+		result = ft_create_elem(av[i]);
+		result->next = tmp;
+	}
+	return (result);
 }
 
 int		main(void)
@@ -43,6 +68,11 @@ int		main(void)
 	t_list	*fourth;
 	t_list	*fifth;
 	t_list	*list;
+	char	**str_tab;
+	char	*str1;
+	char	*str2;
+	char	*str3;
+	char	*str4;
 
 	first = ft_create_elem("a");
 	second = ft_create_elem("b");
@@ -53,14 +83,28 @@ int		main(void)
 	second->next = third;
 	third->next = fourth;
 	fourth->next = fifth;
+
+	str1 = "a";
+	str2 = "b";
+	str3 = "c";
+	str4 = "d";
+	str_tab = malloc(4 * sizeof(*str_tab));
+	str_tab[0] = str1;
+	str_tab[1] = str2;
+	str_tab[2] = str3;
+	str_tab[3] = str4;
 	
 	tab = malloc(5 * sizeof(*tab));
 	tab[0] = first;
 	tab[1] = second;
 	tab[2] = third;
 
-	printf("last: %s\n", (char*)(ft_list_last(tab[0])->data));
-	list = tab[0];
+	list = ft_list_push_params(4, str_tab);
+	list = ft_create_elem("a");
+	//ft_list_push_front(tab, "a");
+	//ft_list_push_front(tab, "b");
+	ft_list_push_front(tab, "c");
+	//ft_list_push_front(tab, "d");
 	while (list)
 	{
 		printf("%s\n", (char*)(list->data));
