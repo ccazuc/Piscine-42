@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 11:50:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 17:06:36 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 17:47:06 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ int		ft_strcmp(char *s1, char *s2)
 {
 	int		i;
 
-	i = - 1;
+	i = -1;
 	while (s1[++i] && s2[i])
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
-		if (s2[i])
-			return (-s2[i]);
+	if (s2[i])
+		return (-s2[i]);
 	if (s1[i])
 		return (s1[i]);
 	return (0);

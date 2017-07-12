@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 12:26:16 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 17:42:39 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 17:45:57 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ void	handle_do_op(char *expr1, char *expr2, char *expr3)
 	while (++i < 6)
 		if (ft_strcmp(operator, g_opptab[i].str) == 0)
 			(g_opptab[i].func(value1, value2));
-	//(g_opptab[operator])(value1, value2);
 }

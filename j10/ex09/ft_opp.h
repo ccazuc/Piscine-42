@@ -6,12 +6,12 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 15:46:43 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 17:39:45 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 17:49:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_OTP_H
-# define FT_OTP_H
+#ifndef FT_OPP_H
+# define FT_OPP_H
 # include "check_params.h"
 # include "handle_error.h"
 
