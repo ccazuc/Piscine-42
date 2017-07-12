@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 12:33:13 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 13:52:36 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 14:33:48 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	handle_add(int a, int b)
 
 void	handle_sub(int a, int b)
 {
-	ft_putnbr(a - b);	
+	ft_putnbr(a - b);
 }
 
 void	handle_mul(int a, int b)
 {
-	ft_putnbr(a * b);	
+	ft_putnbr(a * b);
 }
 
 void	handle_mod(int a, int b)

@@ -6,7 +6,7 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/07 18:53:49 by exam              #+#    #+#             */
-/*   Updated: 2017/07/12 14:26:47 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 14:33:32 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int		start_iter(const char *str)
 
 	if (!str)
 		return (-2);
-	i = - 1;
+	i = -1;
 	while (str[++i])
 	{
 		tmp = str[i];
 		if (tmp == '-')
-		   return (++i);
+			return (++i);
 		if (tmp >= '0' && tmp <= '9')
 			return (i);
 		return (-2);
@@ -43,7 +43,7 @@ int		start_iter(const char *str)
 int		end_iter(int i, const char *str)
 {
 	while (str[++i])
-		if (str[i] < '0' || str [i] > '9')
+		if (str[i] < '0' || str[i] > '9')
 			return (i);
 	return (i);
 }

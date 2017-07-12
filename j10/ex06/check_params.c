@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 11:35:28 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 14:08:46 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 14:30:10 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	get_operator(char c);
 
 char	is_valid_number(char *str)
 {
-	return (1);	
+	return (1);
 }
 
 int		get_number(char *str)
@@ -29,7 +29,7 @@ int		get_number(char *str)
 
 char	is_valid_operator(char c)
 {
-	return (c == '+' || c == '-' || c == '%' || c == '/' || c == '*');	
+	return (c == '+' || c == '-' || c == '%' || c == '/' || c == '*');
 }
 
 char	parse_operator(char *str)

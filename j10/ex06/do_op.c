@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 12:26:16 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 14:16:01 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 14:34:02 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,10 @@ void	handle_do_op(char *expr1, char *expr2, char *expr3)
 	int			value2;
 	char		operator;
 	calc_func	table[5];
-	
+
 	value1 = get_number(expr1);
 	value2 = get_number(expr3);
 	operator = parse_operator(expr2);
-	//printf("value1: %d, value2: %d, operator: %d", value1, value2, operator);
 	init_function_table(table);
-	(table[operator]) (value1, value2);
+	(table[operator])(value1, value2);
 }
