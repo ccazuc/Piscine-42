@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_error.h                                     :+:      :+:    :+:   */
+/*   ft_atoi.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 12:22:08 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 13:13:09 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/12 13:26:19 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/12 13:27:28 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HANDLE_ERROR_H
-# define HANDLE_ERROR_H
+#ifndef FT_ATOI_H
+# define FT_ATOI_H
 
-void	handle_divide_error(void);
-void	handle_modulo_error(void);
-void	handle_wrong_ope_error(void);
+int		ft_atoi(char *str);
 
 #endif

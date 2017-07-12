@@ -6,22 +6,25 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 11:35:28 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 12:10:24 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 14:08:46 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "atoi.h"
+#include "ft_atoi.h"
+#include <stdio.h>
+
+char	get_operator(char c);
 
 char	is_valid_number(char *str)
 {
-	int		
+	return (1);	
 }
 
 int		get_number(char *str)
 {
 	if (!is_valid_number(str))
 		return (0);
-	return (atoi(str));
+	return (ft_atoi(str));
 }
 
 char	is_valid_operator(char c)
@@ -31,24 +34,7 @@ char	is_valid_operator(char c)
 
 char	parse_operator(char *str)
 {
-	int		i;
-	char	has_op;
-	char	nb;
-	char	result;
-
-	i = -1;
-	has_op = 0;
-	while (str[++i])
-		if (str[i] == '"' && !has_op)
-			++nb;
-		else if (str[i] == '"' && has_op)
-			--nb;
-		else 
-		{
-			result = get_operator(str[i]);
-			has_op = 1;	
-		}
-	return (has_op == 0 ? result : -1);
+	return (get_operator(str[0]));
 }
 
 char	get_operator(char c)
@@ -61,4 +47,9 @@ char	get_operator(char c)
 		return (1);
 	if (c == '*')
 		return (2);
+	if (c == '/')
+		return (3);
+	if (c == '%')
+		return (4);
+	return (-1);
 }

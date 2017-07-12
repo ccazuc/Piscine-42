@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_error.h                                     :+:      :+:    :+:   */
+/*   handle_calc.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 12:22:08 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 13:13:09 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/12 12:35:48 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/12 13:42:59 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HANDLE_ERROR_H
-# define HANDLE_ERROR_H
+#ifndef HANDLE_CALC_H
+# define HANDLE_CALC_H
 
-void	handle_divide_error(void);
-void	handle_modulo_error(void);
-void	handle_wrong_ope_error(void);
+void	handle_add(int a, int b);
+void	handle_sub(int a, int b);
+void	handle_mul(int a, int b);
+void	handle_mod(int a, int b);
+void	handle_div(int a, int b);
+typedef void(*calc_func)(int, int);
 
 #endif

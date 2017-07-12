@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 11:33:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 12:26:11 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 13:06:01 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,6 @@ int		main(int argc, char **argv)
 {
 	if (argc != 4)
 		return (-1);
+	handle_do_op(argv[1], argv[2], argv[3]);
+	return (0);
 }
