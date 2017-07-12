@@ -6,9 +6,11 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 11:33:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 13:06:01 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 14:47:49 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 void	handle_do_op(char *expr1, char *expr2, char *expr3);
 
