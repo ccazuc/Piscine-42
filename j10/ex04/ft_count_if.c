@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/11 19:37:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 10:53:17 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/12 11:19:30 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/12 11:21:13 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
-
-typedef struct structs_stock_par
+int		ft_count_if(char **tab, int(*f)(char*))
 {
-	int		size_params;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}		t_stock_par;
+	int		result;
+	int		i;
+	int		j;
 
-#endif
+	result = 0;
+	i = -1;
+	while (tab[++i])
+	{
+		j = -1;
+		while (tab[i][++j])
+			if (f(tab[i][j]) == 1)
+				++result;
+	}
+	return (result);
+}

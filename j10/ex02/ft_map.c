@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/11 19:37:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 10:53:17 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/12 11:13:00 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/12 11:15:00 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+#include <stdlib.h>
 
-typedef struct structs_stock_par
+int		*ft_map(int *tab, int length, int(*f)(int))
 {
-	int		size_params;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}		t_stock_par;
+	int		*result;
+	int		i;
 
-#endif
+	i = -1;
+	result = malloc(length * sizeof(*tab));
+	while (++i < length)
+		result[i] = f(tab[i]);
+	return (result);
+}

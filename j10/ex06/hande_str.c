@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   hande_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/11 19:37:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 10:53:17 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/12 11:50:15 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/12 11:51:15 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+#include <unistd.h>
 
-typedef struct structs_stock_par
+void	ft_putstr(char *str)
 {
-	int		size_params;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}		t_stock_par;
+	int		i;
 
-#endif
+	i = 0;
+	while (str[i])
+		++i;
+	write(1, str, i);
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}

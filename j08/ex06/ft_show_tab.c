@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 19:38:35 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/11 19:52:41 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 10:54:55 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,32 @@ void	ft_putstr(char *str)
 	while (str[++i])
 		ft_putchar(i);
 }
+void	ft_putnbr(int nb)
+{
+	int		tmp;
+	int		length;
 
-void	ft_show_tab(struct s_stock_par *par)
+	length = 1;
+	tmp = nb;
+	while ((tmp = (tmp / 10)) > 0)
+		length *= 10;
+	tmp = nb;
+	while (length)
+	{
+		ft_putchar((tmp / length) + '0');
+		tmp %= length;
+		length /= 10;
+	}
+}
+
+void	ft_show_tab(t_stock_par *par)
 {
 	int		i;
 	int		j;
 	int		k;
 
 	i = -1;
-	while (par[++i])
+	while (par[++i].str != 0)
 	{
 		j = -1;
 		while (par[i].copy[++j])

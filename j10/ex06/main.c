@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/11 19:37:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 10:53:17 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/12 11:33:31 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/12 12:26:11 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+void	handle_do_op(char *expr1, char *expr2, char *expr3);
 
-typedef struct structs_stock_par
+int		main(int argc, char **argv)
 {
-	int		size_params;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}		t_stock_par;
-
-#endif
+	if (argc != 4)
+		return (-1);
+}

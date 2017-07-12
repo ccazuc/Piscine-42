@@ -6,11 +6,14 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 18:38:27 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/11 19:34:18 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/12 10:57:08 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_par.h"
+#include <stdlib.h>
+
+char	**ft_split_white_spaces(char *str);
 
 int					ft_strlen(char *str)
 {
@@ -35,9 +38,9 @@ char	*ft_strdup(char *str)
 	return (result);
 }
 
-struct s_stock_par *ft_param_to_tab(int ac, char **av)
+t_stock_par *ft_param_to_tab(int ac, char **av)
 {
-	s_stock_par		*stock;
+	t_stock_par		*stock;
 	int				i;
 
 	stock = malloc((ac + 1) * sizeof(*stock));
@@ -49,6 +52,6 @@ struct s_stock_par *ft_param_to_tab(int ac, char **av)
 		stock[i].copy = ft_strdup(av[i]);
 		stock[i].tab = ft_split_white_spaces(av[i]);
 	}
-	stock[i] = 0;
+	stock[i].str = 0;
 	return (stock);
 }

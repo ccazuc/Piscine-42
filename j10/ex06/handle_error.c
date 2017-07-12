@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   handle_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/11 19:37:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 10:53:17 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/12 12:12:05 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/12 12:22:59 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+#include "handle_str.h"
 
-typedef struct structs_stock_par
+void	handle_divide_error(void)
 {
-	int		size_params;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}		t_stock_par;
+	ft_putstr("Stop : division by zero\n");
+}
 
-#endif
+void	handle_modulo_error(void)
+{
+	ft_putstr("Stop : modulo by zero\n";
+}

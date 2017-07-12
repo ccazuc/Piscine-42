@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/11 19:37:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 10:53:17 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/12 11:21:54 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/12 11:24:47 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
-
-typedef struct structs_stock_par
+int		ft_cmp(int a, int b)
 {
-	int		size_params;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}		t_stock_par;
+	if (a == b)
+		return (0);
+	return (a > b ? 1 : -1);
+}
 
-#endif
+int		ft_is_sort(int *tab, int length, int(*f)(int, int))
+{
+	int		i;
+
+	i = -1;
+	while (++i < length - 1)
+		if (
+}
