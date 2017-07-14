@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/10 16:15:48 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/11 16:19:47 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/13 10:27:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	get_n_word(char *str, char **result, const int cur_word, int *index)
 		if (str[i] == ' ' || str[i] == '\n' || str[i] == 9)
 			break ;
 //	printf("n_word i: %d, index: %d, cur_word: %d\n", i, *index, cur_word);
-	result[cur_word] = malloc((i - *index + 1) * sizeof(*result));
+	result[cur_word] = malloc((i - *index + 1) * sizeof(**result));
 	i = *index - 1;
 	res_i = 0;
 	while (str[++i])

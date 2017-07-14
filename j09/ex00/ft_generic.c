@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   ft_generic.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 18:01:40 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/13 10:35:04 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/14 11:28:37 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/14 11:29:29 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#include <unistd.h>
 
-typedef struct		s_list
+void	ft_generic(void)
 {
-	struct s_list	*next;
-	void			*data;
-}					t_list;
+	write(1, "Tut tut ; Tut tut\n", 18);
+}
 
-#endif
+int		main(void)
+{
+	ft_generic();
+	return (0);
+}

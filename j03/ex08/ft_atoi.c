@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 11:57:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/06 16:17:41 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/13 12:38:49 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int		ft_get_ini_pos(char *str)
 	char	tmp;
 	int		length;
 
-	if (str == NULL)
-		return (-1);
 	i = 0;
 	while (str[i])
 		i++;
@@ -38,9 +36,12 @@ int		ft_get_ini_pos(char *str)
 		tmp = str[i];
 		if (tmp >= '0' && tmp <= '9')
 			return (i);
-		if (tmp == '-' && i < length - 1
+		if ((tmp == '-' || tmp == '+') && i < length - 1
 				&& str[i + 1] >= '0' && str[i + 1] <= '9')
 			return (i);
+		if (tmp != ' ' && tmp != '\v' && tmp != '\t'
+				&& tmp != '\f' && tmp != '\n' && tmp != '\r')
+			return (-1);
 	}
 	return (-1);
 }
@@ -70,14 +71,13 @@ int		ft_atoi(char *str)
 
 	result = 0;
 	i = ft_get_ini_pos(str);
-	printf("%d", i);
 	if (i == -1)
 		return (0);
 	length = get_end_pos(i, str);
 	if (length == i)
 		return (0);
 	is_neg = str[i] == '-';
-	while (str[i])
+	while (str[i] && i < length)
 	{
 		tmp = str[i];
 		if (tmp >= '0' && tmp <= '9')
@@ -89,7 +89,7 @@ int		ft_atoi(char *str)
 
 int		main(void)
 {
-	char str[] = "   -14748367";
+	char str[] = "    +14748367 55       ";
 
 	printf("c: %d, self: %d", atoi(str), ft_atoi(str));
 	return (0);

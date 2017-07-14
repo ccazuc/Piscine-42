@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 18:01:40 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 18:47:34 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/13 10:35:42 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@ typedef struct		s_list
 	struct s_list	*next;
 	void			*data;
 }					t_list;
-t_list				*ft_create_elem(void *data);
 
 #endif
