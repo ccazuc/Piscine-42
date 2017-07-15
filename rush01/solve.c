@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 15:19:09 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 17:32:16 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 17:38:01 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,11 @@ void	decrement_value(char *x, char *y)
 long	recur_case(char **tab, char x, char y)
 {
 	char	i;
-	lon		valid_result;
+	long	valid_result;
 
 	if (tab[x][y] != '.')
 	{
 		increment_value(&x, &y);
-		valid_result += recur_case(tab, x, y);
 		return (valid_result);
 	}
 	valid_result = 0;

@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 12:48:21 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 15:30:42 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 17:38:14 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	check_column(char **tab, int x, int y, char nb)
 	while (tab[x][++j])
 		if (j != y && tab[x][j] == nb)
 		{
-			printf("error column: %d:%d, nb: %c\n", x, j, nb);
+			//printf("error column: %d:%d, nb: %c\n", x, j, nb);
 			return (0);
 		}
 	return (1);
@@ -38,7 +38,7 @@ char	check_row(char **tab, int x, int y, char nb)
 	while (tab[++i])
 		if (i != x && tab[i][y] == nb)
 		{
-			printf("error row: %d:%d\n", i, y);
+			//printf("error row: %d:%d\n", i, y);
 			return (0);
 		}
 	return (1);
@@ -67,7 +67,7 @@ char	check_block(char **tab, int x, int y, char nb)
 		while (++j < max_j)
 			if (j != y && i != x && tab[i][j] == nb)
 			{
-				printf("error block: %d:%d\n", i, j);
+				//printf("error block: %d:%d\n", i, j);
 				return (0);
 			}
 	}
