@@ -6,13 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:05:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 13:15:52 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 13:37:16 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_case.h"
 
-char	check_size(int **tab)
+char	check_size(char **tab)
 {
 	int		i;
 	int		j;
@@ -30,7 +30,7 @@ char	check_size(int **tab)
 	return (i == 9 ? 1 : 0);
 }
 
-char	check_numbers(int **tab)
+char	check_numbers(char **tab)
 {
 	int		i;
 	int		j;
@@ -42,9 +42,15 @@ char	check_numbers(int **tab)
 		while (tab[++j])
 		{
 			if (!check_column(tab, i, j, tab[i][j]) || !check_row(tab, i, j, tab[i][j])
-					|| check_block(tab, i, j, tab[i][j]))
+					|| !check_block(tab, i, j, tab[i][j])
+					|| !check_case_value(tab[i][j]))
 				return (0);
 		}
 	}
 	return (1);
+}
+
+char	check_case_value(char nb)
+{
+	return (nb != '.' && (nb < '0' || > '9') ? 0 : 1);
 }

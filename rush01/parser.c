@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_grid.h                                       :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/15 13:16:25 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 13:20:50 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/15 13:29:42 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/15 13:35:45 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECK_GRID_H
-# define CHECK_GRID_H
+char	parse_grid(char **tab)
+{
+	char	**result;
 
-char	check_size(int **tab);
-char	check_numbers(int **tab);
-char	check_case_value(int nb);
-
-#endif
+	result = malloc
+}

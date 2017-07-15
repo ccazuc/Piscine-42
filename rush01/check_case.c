@@ -6,11 +6,11 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 12:48:21 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 13:00:53 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 13:36:15 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	check_column(int **tab, int x, int y, int nb)
+char	check_column(char **tab, int x, int y, int nb)
 {
 	int		j;
 
@@ -21,7 +21,7 @@ char	check_column(int **tab, int x, int y, int nb)
 	return (1);
 }
 
-char	check_row(int **tab, int x, int y, int nb)
+char	check_row(char **tab, int x, int y, int nb)
 {
 	int		i;
 
@@ -32,7 +32,7 @@ char	check_row(int **tab, int x, int y, int nb)
 	return (1);
 }
 
-char	check_block(int **tab, int x, int y, int nb)
+char	check_block(char **tab, int x, int y, int nb)
 {
 	int		i;
 	int		max_i;
