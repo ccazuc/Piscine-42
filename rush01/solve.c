@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 15:19:09 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 15:32:57 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 15:41:27 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,17 @@ char	recur_case(char **tab, char x, char y)
 
 	i = '0' - 1;
 	while (++i <= '9')
-	   if (can_place(tab, x, y, i)
-			   tab[x][y] = i;
+	   if (can_place(tab, x, y, i))
+	   {
+		   if (y == 9)
+		   {
+				++x;
+				y = 0;
+		   }
+		   else
+			   ++y;
+		   tab[x][y] = i;
+		   recur_case(tab,
+	   }
+	return (x == 9 && y == 9 ? 1 : 0);
 }
