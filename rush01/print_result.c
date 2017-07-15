@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:45:26 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 14:49:14 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 18:57:41 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	print_result(char **tab)
 		while (tab[i][++j])
 		{
 			ft_putchar(tab[i][j]);
-			ft_putchar(' ');
+			if (j != 8)
+				ft_putchar(' ');
 		}
 		ft_putchar('\n');
 	}

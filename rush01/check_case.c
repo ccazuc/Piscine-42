@@ -6,11 +6,9 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 12:48:21 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 18:17:16 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 18:59:00 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	check_column(char **tab, int x, int y, char nb)
 {
@@ -21,10 +19,7 @@ char	check_column(char **tab, int x, int y, char nb)
 		return (1);
 	while (tab[x][++j])
 		if (j != y && tab[x][j] == nb)
-		{
-			//printf("error column: %d:%d, nb: %c\n", x, j, nb);
 			return (0);
-		}
 	return (1);
 }
 
@@ -37,10 +32,7 @@ char	check_row(char **tab, int x, int y, char nb)
 		return (1);
 	while (tab[++i])
 		if (i != x && tab[i][y] == nb)
-		{
-			//printf("error row: %d:%d\n", i, y);
 			return (0);
-		}
 	return (1);
 }
 
@@ -66,19 +58,13 @@ char	check_block(char **tab, int x, int y, char nb)
 		j = y - (y % 3) - 1;
 		while (++j < max_j)
 			if (j != y && i != x && tab[i][j] == nb)
-			{
-				//printf("error block: %d:%d\n", i, j);
 				return (0);
-			}
 	}
 	return (1);
 }
 
 char	can_place(char **tab, int x, int y, char nb)
 {
-	return ((check_block(tab, x, y, nb) == 0) ||
-			(check_row(tab, x, y, nb) == 0) ||
-			(check_column(tab, x, y, nb) == 0) ||
-			(check_case(tab, x, y) == 0)
-			? 0 : 1);
+	return (check_block(tab, x, y, nb) && check_row(tab, x, y, nb)
+			&& check_column(tab, x, y, nb));
 }
