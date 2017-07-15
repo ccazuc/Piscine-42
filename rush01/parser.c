@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:29:42 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 17:46:26 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 17:46:53 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	**fill_grid(int argc, char **tab)
 			result[i - 1][j] = tab[i][j];
 		tab[i][j] = 0;
 	}
-	tab[i][j] = NULL;
+	tab[i] = NULL;
 	return (result);
 }
 char	**parse_grid(int argc, char **tab)
