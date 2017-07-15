@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 12:48:21 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 13:36:15 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 14:04:03 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ char	check_row(char **tab, int x, int y, int nb)
 	return (1);
 }
 
+char	check_case(char **tab, int x, int y)
+{
+	return (tab[x][y] == '.' ? 1 : 0);
+}
+
 char	check_block(char **tab, int x, int y, int nb)
 {
 	int		i;
@@ -39,13 +44,13 @@ char	check_block(char **tab, int x, int y, int nb)
 	int		j;
 	int		max_j;
 
-	i = x / 3 - 1;
-	max_i = x / 3 + 3;
-	max_j = y / 3 + 3;
-	while (++i <= max_i)
+	i = x - (x % 3) - 1;
+	max_i = x - (x % 3) + 3;
+	max_j = y - (y % 3) + 3;
+	while (++i < max_i)
 	{
-		j = y / 3 - 1;
-		while (++j <= max_j)
+		j = y - (y % 3) - 1;
+		while (++j < max_j)
 			if (j != y && i != x && tab[i][j] == nb)
 				return (0);
 	}
