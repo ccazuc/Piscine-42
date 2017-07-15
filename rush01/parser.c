@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:29:42 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 18:12:45 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 18:23:06 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	**parse_grid(int argc, char **tab)
 	result = fill_grid(argc, tab);
 	if (result == NULL)
 		return (NULL);
-	print_result(result);
+	//print_result(result);
 	if (!check_numbers(result))
 	{
 		print_error();

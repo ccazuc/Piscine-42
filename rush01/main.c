@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:18:18 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 18:14:30 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 18:33:15 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "print_result.h"
 #include "solve.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 int		main(int argc, char **argv)
 {
@@ -33,7 +34,8 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	nb_res = recur_case(result, 0, 0);
-	//if (nb_res == 1)
+	printf("nb: %ld\n", nb_res);
+	if (nb_res == 1)
 		print_result(result);
 	return (0);
 }

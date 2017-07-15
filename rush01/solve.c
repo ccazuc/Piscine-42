@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 15:19:09 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 18:20:03 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 18:35:42 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ long	recur_case(char **tab, char x, char y)
 	long	valid_result;
 
 	if (x == 8 && y == 8)
-		return (valid_result);
+		return (1);
 	if (tab[x][y] != '.')
 	{
 		increment_value(&x, &y);
-		return (valid_result);
+		return (recur_case(tab, x, y));
 	}
 	valid_result = 0;
 	i = '1' - 1;
