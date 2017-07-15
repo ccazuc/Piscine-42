@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:11:55 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 15:10:47 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 16:11:28 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 char	check_column(char **tab, int x, int y, char nb);
 char	check_row(char **tab, int x, int y, char nb);
 char	check_block(char **tab, int x, int y, char nb);
+char	can_place(char **tab, int x, int y, char nb);
 
 #endif

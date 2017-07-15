@@ -6,13 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 15:19:09 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 15:54:39 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 16:10:25 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_case.h"
 
-void	increment_value(int *x, int *y)
+void	increment_value(char *x, char *y)
 {
 	if (*y == 8)
 	{
@@ -34,7 +34,9 @@ char	recur_case(char **tab, char x, char y)
 		   tab[x][y] = i;
 		   increment_value(&x, &y);
 		   if (recur_case(tab, x, y) == 0)
+			   tab[x][y] = '.';
 	   }
 	increment_value(&x, &y);
+	
 	return (x == 8 && y == 8 ? 1 : 0);
 }
