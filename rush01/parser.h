@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/15 13:18:18 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 14:40:41 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/15 14:10:44 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/15 14:40:33 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "check_grid.h"
-#include "parser.h"
+#ifndef PARSER_H
+# define PARSER_H
 
-int		main(int argc, char **argv)
-{
-	if (argc != 10)
-		return (0);
-	parse_grid(argc, argv);
-	return (0);
-}
+char	**parse_grid(int argc, char **tab);
+
+#endif

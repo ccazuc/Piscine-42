@@ -6,28 +6,36 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:05:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 13:37:16 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 14:29:42 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_case.h"
+#include <stdio.h>
 
+char	check_case_value(char nb)
+{
+	return (nb != '.' && (nb < '0' || nb > '9') ? 0 : 1);
+}
 char	check_size(char **tab)
 {
 	int		i;
 	int		j;
 
-	i = 0;
+	i = 1;
 	while (tab[i])
 	{
 		j = 0;
 		while (tab[i][j])
 			++j;
 		if (j != 9)
+		{
+			printf("wrong size: %d:%d", i, j); 
 			return (0);
+		}
 		++i;
 	}
-	return (i == 9 ? 1 : 0);
+	return (i == 10 ? 1 : 0);
 }
 
 char	check_numbers(char **tab)
@@ -48,9 +56,4 @@ char	check_numbers(char **tab)
 		}
 	}
 	return (1);
-}
-
-char	check_case_value(char nb)
-{
-	return (nb != '.' && (nb < '0' || > '9') ? 0 : 1);
 }
