@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 15:19:09 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 16:34:06 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 16:35:28 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	increment_value(char *x, char *y)
 		*y = *y + 1;
 }
 
-char	recur_case(char **tab, char x, char y)
+int		recur_case(char **tab, char x, char y)
 {
 	char	i;
 	int		valid_result;
