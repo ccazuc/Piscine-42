@@ -6,14 +6,14 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 15:19:09 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 19:27:52 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 19:29:21 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "check_case.h"
 #include "print_result.h"
 
-void	increment_value(unsigned char *x, unsigned char *y)
+void	increment_value(int *x, int *y)
 {
 	if (*y == 8)
 	{
@@ -24,7 +24,7 @@ void	increment_value(unsigned char *x, unsigned char *y)
 		*y = *y + 1;
 }
 
-void	decrement_value(unsigned char *x, unsigned char *y)
+void	decrement_value(int *x, int *y)
 {
 	if (*y == 0)
 	{
@@ -41,7 +41,7 @@ void	handle_show(char **tab, long show)
 		print_result(tab);
 }
 
-long	recur_case(char **tab, unsigned char x, unsigned char y, long show)
+long	recur_case(char **tab, int x, int y, long show)
 {
 	char	i;
 	long	valid_result;
