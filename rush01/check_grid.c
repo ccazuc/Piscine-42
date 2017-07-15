@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:05:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 14:29:42 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 15:03:28 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ char	check_numbers(char **tab)
 			if (!check_column(tab, i, j, tab[i][j]) || !check_row(tab, i, j, tab[i][j])
 					|| !check_block(tab, i, j, tab[i][j])
 					|| !check_case_value(tab[i][j]))
+			{
+				printf("%d:%d\n", i, j);
 				return (0);
+			}
 		}
 	}
 	return (1);
