@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 15:19:09 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 16:51:40 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 16:53:38 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void	increment_value(char *x, char *y)
 void	decrement_value(char *x, char *y)
 {
 	if (*y == 0)
+	{
 		*x = *x - 1;
+		*y = 8;
+	}
 	else
 		*y = *y - 1;
 }
