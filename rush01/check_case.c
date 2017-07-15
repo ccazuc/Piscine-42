@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 12:48:21 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 17:38:14 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 18:17:16 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,4 @@ char	can_place(char **tab, int x, int y, char nb)
 			(check_column(tab, x, y, nb) == 0) ||
 			(check_case(tab, x, y) == 0)
 			? 0 : 1);
-
 }

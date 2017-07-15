@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:05:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 15:03:28 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 18:18:06 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	check_case_value(char nb)
 {
 	return (nb != '.' && (nb < '0' || nb > '9') ? 0 : 1);
 }
+
 char	check_size(char **tab)
 {
 	int		i;
@@ -30,7 +31,7 @@ char	check_size(char **tab)
 			++j;
 		if (j != 9)
 		{
-			printf("wrong size: %d:%d", i, j); 
+			printf("wrong size: %d:%d", i, j);
 			return (0);
 		}
 		++i;
@@ -49,7 +50,8 @@ char	check_numbers(char **tab)
 		j = -1;
 		while (tab[++j])
 		{
-			if (!check_column(tab, i, j, tab[i][j]) || !check_row(tab, i, j, tab[i][j])
+			if (!check_column(tab, i, j, tab[i][j])
+					|| !check_row(tab, i, j, tab[i][j])
 					|| !check_block(tab, i, j, tab[i][j])
 					|| !check_case_value(tab[i][j]))
 			{
