@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:18:18 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 17:38:27 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 18:14:30 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "parser.h"
 #include "print_result.h"
 #include "solve.h"
+#include <stdlib.h>
 
 int		main(int argc, char **argv)
 {
@@ -26,6 +27,11 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	result = parse_grid(argc, argv);
+	if (result == NULL)
+	{
+		print_error();
+		return (0);
+	}
 	nb_res = recur_case(result, 0, 0);
 	//if (nb_res == 1)
 		print_result(result);
