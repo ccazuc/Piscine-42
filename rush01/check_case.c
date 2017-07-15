@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 12:48:21 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 15:12:09 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 15:30:42 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,14 @@ char	check_block(char **tab, int x, int y, char nb)
 			}
 	}
 	return (1);
+}
+
+char	can_place(char **tab, int x, int y, char nb)
+{
+	return ((check_block(tab, x, y, nb) == 0) ||
+			(check_row(tab, x, y, nb) == 0) ||
+			(check_column(tab, x, y, nb) == 0) ||
+			(check_case(tab, x, y) == 0)
+			? 0 : 1);
+
 }
