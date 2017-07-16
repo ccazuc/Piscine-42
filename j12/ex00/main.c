@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_sort.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/16 15:20:26 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/16 16:40:42 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/16 18:38:31 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/16 18:56:53 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include <unistd.h>
+#include <fcntl.h>
 
-void	ft_list_sort(t_list **begin_list, int (*cmp)())
+int		main(int argc, char **argv)
 {
-	void	data;
-	t_list	*list;
-	t_list	*count;
+	int		fd;
+	int		read_len;
+	char	tab[1000];
 
-	list = *begin_list;
-	while (list->next)
+	if (argc != 2)
 	{
-		count = list;
-		while (count->next)
-			if (cmp(count->data, list->data) > 0)
-			{
-				data = count->data;
-				count->data = list ->data;
-				list->data = data;
-			}
-		list = list->next;
+		write(1, "Too many arguments.\n", 20);
+		return (0);
 	}
+   fd = open(argv[1], O_RDWR);
+   if (fd == -1)
+	   return (0);
+	while ((read_len = read(fd, tab, 1000)) > 0)
+		write(1, tab, read_len);
+	return (0);
 }
