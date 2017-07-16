@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/15 13:18:18 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/15 19:19:48 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/15 19:37:28 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int		main(int argc, char **argv)
 	nb_res = recur_case(result, 0, 0, 0);
 	if (nb_res == 1)
 		recur_case(result, 0, 0, 1);
+	else
+		print_error();
 	return (0);
 }
