@@ -6,17 +6,17 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 18:02:58 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/11 18:57:26 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/17 17:23:31 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_POINT_H
 # define FT_POINT_H
 
-struct t_point
+typedef struct	s_point
 {
-	int		x;
-	int		y;
-};
+	int			x;
+	int			y;
+}				t_point;
 
 #endif

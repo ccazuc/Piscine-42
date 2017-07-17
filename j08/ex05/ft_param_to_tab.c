@@ -6,14 +6,12 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 18:38:27 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 10:57:08 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/17 17:28:11 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_par.h"
 #include <stdlib.h>
-
-char	**ft_split_white_spaces(char *str);
 
 int					ft_strlen(char *str)
 {
@@ -38,7 +36,7 @@ char	*ft_strdup(char *str)
 	return (result);
 }
 
-t_stock_par *ft_param_to_tab(int ac, char **av)
+struct s_stock_par *ft_param_to_tab(int ac, char **av)
 {
 	t_stock_par		*stock;
 	int				i;
