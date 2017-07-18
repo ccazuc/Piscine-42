@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:40:34 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 13:41:14 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/18 15:50:17 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,16 @@ int		parse_params(int argc, char **argv, int *value_in_c)
 	{
 		if (i == 1 && check_args(argv[0], argv[1], &args_value, value_in_c) == -1)
 			return (0);
-		if (i == 2 && args_value == -2 && check_args_value(argv[i]) == -1)
+		if (i == 2 && args_value == -2 && check_args_value(&args_value, argv[i], 0) == -1)
 			return (0);
 	}
 	return (args_value);
 }
 
-int		check_args_value(char *args)
+int		check_args_value(int *args_value, char *args, int offset)
 {
-	return ft_atoi(args, 2);	
+	*args_value = ft_atoi(args, offset);
+	return (*args_value);
 }
 
 int		check_args(char *bin_name, char *args, int *args_value, int *value_in_c)
@@ -48,7 +49,7 @@ int		check_args(char *bin_name, char *args, int *args_value, int *value_in_c)
 		}
 	if (i != 2)
 	{
-		*args_value = check_args_value(args);
+		check_args_value(args_value, args, 2);
 		*value_in_c = 1;
 	}
 	return (1);
