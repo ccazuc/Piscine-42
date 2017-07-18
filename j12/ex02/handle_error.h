@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_files.h                                      :+:      :+:    :+:   */
+/*   handle_error.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/18 12:09:28 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 18:01:17 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/18 18:02:19 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/18 18:06:40 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_FILES_H
-# define PRINT_FILES_H
-# define READ_LEN 0
-# define TOT_LEN 1
+#ifndef HANDLE_ERROR_H
+# define HANDLE_ERROR_H
 
-void	print_files(int argc, char **argv, int char_nb, int value_in_c);
-void	print_multiple_files(int argc, char **argv, int start, int char_nb);
-void	print_single_file(char **argv, int index, int char_nb);
-void	print_file_header(char *file_name);
+void	handle_error(char *bin_name, char *file_name, int errno);
 
 #endif

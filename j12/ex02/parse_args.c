@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:40:34 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 17:40:32 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/18 18:12:50 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int		parse_params(int argc, char **argv, int *value_in_c)
 	args_value = -2;
 	while (++i < argc)
 	{
-		if (i == 1 && check_args(argv[0], argv[1], &args_value, value_in_c) == -1)
+		if (i == 1 &&
+				check_args(argv[0], argv[1], &args_value, value_in_c) == -1)
 			return (0);
 		if (i == 2 && args_value == -2 &&
 				check_args_value(&args_value, argv[i], 0) == -1)
@@ -37,7 +38,6 @@ int		parse_params(int argc, char **argv, int *value_in_c)
 int		check_args_value(int *args_value, char *args, int offset)
 {
 	*args_value = ft_atoi(args, offset);
-	printf("Args_value: %d\n", *args_value);
 	return (*args_value);
 }
 
