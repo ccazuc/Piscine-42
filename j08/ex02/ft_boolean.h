@@ -6,12 +6,12 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 17:28:47 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/17 17:17:55 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/18 18:23:36 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BOOLEAN_H
-# define BOOLEAN_H
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
 # define TRUE 1
 # define FALSE 0

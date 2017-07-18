@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 19:37:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/17 17:26:33 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/18 18:32:26 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_STOCK_PAR_H
 
 void			ft_putchar(char c);
-typedef struct 	s_stock_par
+typedef struct	s_stock_par
 {
 	int			size_params;
 	char		*str;

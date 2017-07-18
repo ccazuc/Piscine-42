@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 18:38:27 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/17 17:28:11 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/18 18:32:10 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int					ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strdup(char *str)
+char				*ft_strdup(char *str)
 {
 	char	*result;
 	int		i;
@@ -36,7 +36,7 @@ char	*ft_strdup(char *str)
 	return (result);
 }
 
-struct s_stock_par *ft_param_to_tab(int ac, char **av)
+struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 {
 	t_stock_par		*stock;
 	int				i;

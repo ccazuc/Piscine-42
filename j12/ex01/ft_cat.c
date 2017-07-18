@@ -6,15 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/17 15:15:24 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/17 19:34:43 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/18 19:04:54 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <unistd.h>
 #include <errno.h>
-
-extern int	errno;
 
 void	ft_putstr(char *str)
 {
@@ -26,7 +24,7 @@ void	ft_putstr(char *str)
 	write(1, str, i);
 }
 
-void	read_stdin()
+void	read_stdin(void)
 {
 	int		i;
 	char	tab[1000];
@@ -70,7 +68,6 @@ void	print_file(char *bin_name, char *file_name)
 	char	tab[1000];
 
 	fd = open(file_name, O_RDWR);
-	//printf("fd: %d", fd);
 	if (fd == -1)
 	{
 		if (file_name[0] == '-' && file_name[1] == '\0')
@@ -82,13 +79,13 @@ void	print_file(char *bin_name, char *file_name)
 		write(1, tab, read_len);
 }
 
-int		main(int argc,  char **argv)
+int		main(int argc, char **argv)
 {
 	int		i;
 	char	*bin_name;
 
 	i = 0;
-	bin_name  = argv[0];
+	bin_name = argv[0];
 	while (++i < argc)
 		print_file(argv[0], argv[i]);
 	return (0);

@@ -6,19 +6,12 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 19:38:35 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 10:54:55 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/18 18:31:33 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_par.h"
 #include <unistd.h>
-
-void	ft_putchar(char c);
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 void	ft_putstr(char *str)
 {
@@ -28,6 +21,7 @@ void	ft_putstr(char *str)
 	while (str[++i])
 		ft_putchar(i);
 }
+
 void	ft_putnbr(int nb)
 {
 	int		tmp;
