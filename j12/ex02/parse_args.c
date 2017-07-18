@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:40:34 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 15:50:17 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/18 17:40:32 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ int		parse_params(int argc, char **argv, int *value_in_c)
 	{
 		if (i == 1 && check_args(argv[0], argv[1], &args_value, value_in_c) == -1)
 			return (0);
-		if (i == 2 && args_value == -2 && check_args_value(&args_value, argv[i], 0) == -1)
+		if (i == 2 && args_value == -2 &&
+				check_args_value(&args_value, argv[i], 0) == -1)
+		{
+			option_wrong_value(argv[i], argv[0], -1);
 			return (0);
+		}
 	}
 	return (args_value);
 }
@@ -33,6 +37,7 @@ int		parse_params(int argc, char **argv, int *value_in_c)
 int		check_args_value(int *args_value, char *args, int offset)
 {
 	*args_value = ft_atoi(args, offset);
+	printf("Args_value: %d\n", *args_value);
 	return (*args_value);
 }
 
@@ -44,22 +49,50 @@ int		check_args(char *bin_name, char *args, int *args_value, int *value_in_c)
 	while (args[++i])
 		if ((i == 0 && args[i] != '-') || (i == 1 && args[i] != 'c'))
 		{
-			wrong_option(args, bin_name);
+			wrong_option(args, bin_name, 0);
 			return (-1);
 		}
 	if (i != 2)
 	{
-		check_args_value(args_value, args, 2);
+		if (check_args_value(args_value, args, 2) == -1)
+		{
+			option_wrong_value(args, bin_name, 2);
+			return (-1);
+		}
 		*value_in_c = 1;
 	}
 	return (1);
 }
 
-void	wrong_option(char *param, char *bin_name)
+void	option_wrong_value(char *param, char *bin_name, int offset)
 {
+	int		i;
+
+	i = -1;
+	ft_putstr(bin_name);
+	ft_putstr(": illegal offset -- ");
+	while (param[++i])
+		if (i > offset)
+			ft_putchar(param[i]);
+	ft_putchar('\n');
+}
+
+void	wrong_option(char *param, char *bin_name, char print_value)
+{
+	int		i;
+
+	i = 0;
 	ft_putstr(bin_name);
 	ft_putstr(": illegal option -- ");
-	ft_putstr(param);
+	if (print_value)
+	{
+		while (param[++i])
+			if (i > 1)
+				ft_putchar(param[i]);
+	}
+	else
+		while (param[++i] && i < 2)
+			ft_putchar(param[i]);
 	ft_putchar('\n');
 	ft_putstr("usage: ");
 	ft_putstr(bin_name);
