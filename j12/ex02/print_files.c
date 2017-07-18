@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:27:33 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 14:14:17 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/18 14:57:43 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-void	print_files(int argc, char **argv, char char_nb, int value_in_c)
+void	print_files(int argc, char **argv, int char_nb, int value_in_c)
 {
 	int		multiple_files;
 
@@ -43,25 +43,29 @@ void	print_multiple_files(int argc, char **argv, int start, int char_nb)
 
 void	print_single_file(char *file_name, int char_nb)
 {
-	char	**buffer;
+	char	buffer[1000];
+	char	*result;
 	int		i;
 	int		fd;
-	int		read_len;
-	
-	//printf("print_single_file_start\n");
-	buffer = malloc(((char_nb / 1000) + 2) * sizeof(*buffer));
-	i = -1;
-	while (++i < (char_nb / 1000) + 1)
-		buffer[i] = malloc(1000 * sizeof(**buffer));
-	buffer[i] = 0;
+	long	len[2];
+
+	len[TOT_LEN] = 0;
 	fd = open(file_name, O_RDONLY);
-	i = 0;
-	//printf("print_single_file_middle, fd: %d\n", fd);
-	while ((read_len = read(fd, buffer[i], 1000)) > 0)
+	if (fd == -1)
+		;//handle_error
+	while ((len[READ_LEN] = read(fd, buffer, 1000)) > 0)
+		len[TOT_LEN] += len[READ_LEN];
+	i = len[TOT_LEN] - char_nb;
+	result = malloc((len[TOT_LEN] + 1) * sizeof(*result));
+	close(fd);
+	open(file_name, O_RDONLY);
+	printf("read: %zd, tot_len: %ld\n", read(fd, result, len[TOT_LEN]), len[TOT_LEN]);
+	while (i < len[TOT_LEN])
 	{
-		buffer[i][1000] = '\0';
-		write(1, buffer[i], read_len);
+		ft_putchar(result[i]);
+		++i;
 	}
+	
 }
 
 void	print_file_header(char *file_name)
