@@ -6,12 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:40:34 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 18:12:50 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/20 11:55:03 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 #include "parse_args.h"
+#include "handle_error_msg.h"
 
 int		parse_params(int argc, char **argv, int *value_in_c)
 {
@@ -31,6 +32,11 @@ int		parse_params(int argc, char **argv, int *value_in_c)
 			option_wrong_value(argv[i], argv[0], -1);
 			return (0);
 		}
+	}
+	if (argc <= 2 && !*value_in_c)
+	{
+		handle_not_enough_args(argv, 1);
+		return (0);
 	}
 	return (args_value);
 }
@@ -56,7 +62,7 @@ int		check_args(char *bin_name, char *args, int *args_value, int *value_in_c)
 	{
 		if (check_args_value(args_value, args, 2) == -1)
 		{
-			option_wrong_value(args, bin_name, 2);
+			option_wrong_value(args, bin_name, 1);
 			return (-1);
 		}
 		*value_in_c = 1;

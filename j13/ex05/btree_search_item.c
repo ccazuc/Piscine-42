@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_insert_data.c                                :+:      :+:    :+:   */
+/*   btree_search_item.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/19 12:33:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/19 12:36:47 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/19 12:37:03 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/19 12:45:29 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_btree.h"
+#include <stdlib.h>
 
-void	btree_insert_data(t_btree **root, void *item,
+void	*btree_search_item(t_btree *root, void *data_ref,
 		int (*cmpf)(void *, void *))
 {
 	if (!root)
-	{
-		root = btree_create_node(item);
-		return ;
-	}
-	if (cmpf(root, root->left) >= 0)
-		btree_insert_data(root->left, item);
-	else
-		btree_insert_data(root->right, item);
+		return (NULL);
+	btree_search_item(root->left, data_ref, cmpf);
+	if (cmpf(root->item, data_ref) == 0)
+		return (root);
+	btree_search_item(root->right, data_ref, cmpf);
+	return (NULL);
+}
+
+int		main(void)
+{
+	return (0);
 }

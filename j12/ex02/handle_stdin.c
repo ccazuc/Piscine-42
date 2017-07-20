@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_insert_data.c                                :+:      :+:    :+:   */
+/*   handle_stdin.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/19 12:33:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/19 12:36:47 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/19 14:37:35 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/19 15:06:31 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
+#include "str.h"
+#include <unistd.h>
+#include <stdlib.h>
 
-void	btree_insert_data(t_btree **root, void *item,
-		int (*cmpf)(void *, void *))
+void	read_stdin(int char_nb, int value_in_c)
 {
-	if (!root)
-	{
-		root = btree_create_node(item);
-		return ;
-	}
-	if (cmpf(root, root->left) >= 0)
-		btree_insert_data(root->left, item);
-	else
-		btree_insert_data(root->right, item);
+	char	*buffer;
+	int		i;
+
+	if (!(buffer = malloc((char_nb + 1) * sizeof(*buffer))))
+			return ;
+		while ((i = read(0, buffer, char_nb)) > 0)
+			buffer[i] = '\0';
+		ft_putstr(buffer);
 }

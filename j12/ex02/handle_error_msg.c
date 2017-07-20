@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_insert_data.c                                :+:      :+:    :+:   */
+/*   handle_error_msg.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/19 12:33:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/19 12:36:47 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/19 13:56:07 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/19 14:03:46 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
+#include "str.h"
 
-void	btree_insert_data(t_btree **root, void *item,
-		int (*cmpf)(void *, void *))
+void	handle_not_enough_args(char **argv, int index)
 {
-	if (!root)
-	{
-		root = btree_create_node(item);
-		return ;
-	}
-	if (cmpf(root, root->left) >= 0)
-		btree_insert_data(root->left, item);
-	else
-		btree_insert_data(root->right, item);
+	ft_putstr(argv[0]);
+	ft_putstr(": option requires an argument -- ");
+	ft_putchar(argv[index][1]);
+	ft_putchar('\n');
+	ft_putstr("usage: ");
+	ft_putstr(argv[0]);
+	ft_putstr(" [c] [file ...]\n");
 }

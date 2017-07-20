@@ -6,13 +6,14 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:27:33 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 19:20:43 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/20 11:42:56 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 #include "print_files.h"
 #include "handle_error.h"
+#include "handle_stdin.h"
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -23,7 +24,9 @@ void	print_files(int argc, char **argv, int char_nb, int value_in_c)
 	int		multiple_files;
 
 	multiple_files = (argc > 4 - value_in_c ? 1 : 0);
-	if (multiple_files)
+	if (argc == 2)
+		read_stdin(char_nb, value_in_c);
+	else if (multiple_files)
 		print_multiple_files(argc, argv, 3 - value_in_c, char_nb);
 	else
 		print_single_file(argv, 3 - value_in_c, char_nb);

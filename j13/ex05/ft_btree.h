@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   btree_insert_data.c                                :+:      :+:    :+:   */
+/*   ft_btree.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/19 12:33:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/19 12:36:47 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/18 19:28:04 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/18 19:29:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
+#ifndef FT_BTREE_H
+# define FT_BTREE_H
 
-void	btree_insert_data(t_btree **root, void *item,
-		int (*cmpf)(void *, void *))
+typedef struct		s_btree
 {
-	if (!root)
-	{
-		root = btree_create_node(item);
-		return ;
-	}
-	if (cmpf(root, root->left) >= 0)
-		btree_insert_data(root->left, item);
-	else
-		btree_insert_data(root->right, item);
-}
+	struct s_btree	*left;
+	struct s_btree	*right;
+	void			*item;
+}					t_btree;
+
+#endif
