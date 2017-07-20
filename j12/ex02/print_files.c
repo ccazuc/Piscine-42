@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:27:33 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/20 11:42:56 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/20 12:59:05 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void	print_single_file(char **argv, int index, int char_nb)
 	while ((len[READ_LEN] = read(fd, buffer, 1000)) > 0)
 		len[TOT_LEN] += len[READ_LEN];
 	i = (len[TOT_LEN] - char_nb - 1 > 0 ? len[TOT_LEN] - char_nb - 1 : -1);
-	result = malloc((len[TOT_LEN] + 1) * sizeof(*result));
+	if (!(result = malloc((len[TOT_LEN] + 1) * sizeof(*result))))
+		return ;
 	close(fd);
 	open(argv[index], O_RDONLY);
 	read(fd, result, len[TOT_LEN]);
