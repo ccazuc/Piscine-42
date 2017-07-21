@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 12:26:16 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 17:57:39 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/21 12:39:08 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ void	handle_do_op(char *expr1, char *expr2, char *expr3)
 		return ;
 	}		
 	init_function_table(table);
-	(table[operator])(value1, value2);
+	(table[(int)operator])(value1, value2);
 }

@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 11:35:28 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 17:40:37 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/21 12:48:55 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,8 @@
 
 char	*get_operator(char c);
 
-char	is_valid_number(char *str)
-{
-	return (1);
-}
-
 int		get_number(char *str)
 {
-	if (!is_valid_number(str))
-		return (0);
 	return (ft_atoi(str));
 }
 
