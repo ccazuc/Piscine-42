@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 18:55:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/12 20:55:08 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/20 14:14:50 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_list_push_params(int ac, char **av)
 	int		i;
 
 	if (ac == 0)
-		return NULL;
+		return (NULL);
 	result = ft_create_elem(av[0]);
 	i = 0;
 	while (av[++i])
