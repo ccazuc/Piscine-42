@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 15:03:42 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 16:42:09 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char	**conv_linked_list(t_list *begin_list, int tot_len)
 		return (NULL);
 	result[nb_row] = NULL;
 	i = -1;
-	printf("number row: %d\n", nb_row);
+	//printf("number row: %d\n", nb_row);
 	list = begin_list;
 	while (++i < nb_row)
 	{

@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:36:16 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 16:23:22 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 16:45:07 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int		get_width(char **tab)
 	if (tab[0])
 		while (tab[0][j])
 			++j;
-	printf("width: %d\n", j);
-	return (j);
+	//printf("width: %d\n", j);
+	return (j - 1);
 }
 
 int		get_height(char **tab)
@@ -30,5 +30,5 @@ int		get_height(char **tab)
 	i = 0;
 	while (tab[i])
 		++i;
-	return (i);
+	return (i - 1);
 }
