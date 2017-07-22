@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 14:39:42 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 14:54:40 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,15 @@ char	get_char_from_row(t_list *begin_list, int row, int column)
 	{
 		if (i == row && j == column)
 		{
-			printf("get_char_from_row i: %d j: %d char: '%c'\n", i, j, list->data);
+			//printf("get_char_from_row i: %d j: %d char: '%c'\n", i, j, list->data);
 			return (list->data);
 		}
+		++j;
 		if (list->data == '\n')
 		{
 			++i;
 			j = 0;
 		}
-		++j;
 		list = list->next;
 	}
 	return (0);
@@ -104,7 +104,7 @@ char	**conv_linked_list(t_list *begin_list, int tot_len)
 	i = -1;
 	printf("number row: %d\n", nb_row);
 	list = begin_list;
-	printf("char debug: '%c'\n", get_char_from_row(begin_list, 3, 0));
+	//printf("char debug: '%c', char_value: %d\n", get_char_from_row(begin_list, 3, 0), get_char_from_row(begin_list, 3, 0));
 	while (++i < nb_row)
 	{
 		j = -1;
@@ -115,7 +115,7 @@ char	**conv_linked_list(t_list *begin_list, int tot_len)
 		while (++j < cur_row_len)
 		{
 			result[i][j] = get_char_from_row(begin_list, i, j);
-			printf("char i: %d j: %d char: '%c', char_value: %d\n", i, j, result[i][j], result[i][j]);
+			//printf("char i: %d j: %d char: '%c', char_value: %d\n", i, j, result[i][j], result[i][j]);
 		}
 		result[i][j] = '\0';
 	}
