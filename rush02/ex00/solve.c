@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:06:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 17:24:41 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 17:40:53 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	check_colle(char **tab)
 	parse_colle(tab, "2AACCBB", value);
 	parse_colle(tab, "3ACACBB", value);
 	parse_colle(tab, "4ACCABB", value);
-	if (!tab[FOUND])
+	if (!value[FOUND])
 		ft_putstr("aucune");
 }
 
@@ -43,12 +43,12 @@ char	check_char(char **tab, char *pattern, int *value, int *coord)
 		return (0);
 	}
 	if (i == 0 && j == value[WIDTH] - 1 && j != 0 && tab[i][j] != pattern[2])
-	{	
+	{
 		//printf("pattern 2, colle: %c, char: '%c', i: %d, j: %d\n", pattern[0], tab[i][j], i , j);
 		return (0);
 	}
-	if (i == value[HEIGHT]  && i != 0 && j == 0 && tab[i][j] != pattern[3])
-	{	
+	if (i == value[HEIGHT] && i != 0 && j == 0 && tab[i][j] != pattern[3])
+	{
 		//printf("pattern 3, colle: %c, char: '%c'\n", pattern[0], tab[i][j]);
 		return (0);
 	}
@@ -57,12 +57,14 @@ char	check_char(char **tab, char *pattern, int *value, int *coord)
 		//printf("pattern 4, colle: %c, char: '%c'\n", pattern[0], tab[i][j]);
 		return (0);
 	}
-	if ((i == 0 || i == value[HEIGHT]) && j > 1 && j < value[WIDTH] - 1 && tab[i][j] != pattern[5])
+	if ((i == 0 || i == value[HEIGHT]) && j > 1 &&
+			j < value[WIDTH] - 1 && tab[i][j] != pattern[5])
 	{
 		//printf("pattern 5, colle: %c, char: '%c', i: %d, j: %d\n", pattern[0], tab[i][j], i, j);
 		return (0);
 	}
-	if ((j == 0 || j == value[WIDTH] - 1) && i > 1 && i < value[HEIGHT] && tab[i][j] != pattern[6])
+	if ((j == 0 || j == value[WIDTH] - 1) && i > 1 &&
+			i < value[HEIGHT] && tab[i][j] != pattern[6])
 	{
 		//printf("pattern 6, colle: %c, char: '%c'\n", pattern[0], tab[i][j]);
 		return (0);
@@ -72,7 +74,8 @@ char	check_char(char **tab, char *pattern, int *value, int *coord)
 		//printf("pattern 7, colle: %c, char: '%c', i: %d, %dj: \n", pattern[0], tab[i][j], i, j);
 		return (0);
 	}
-	if (j > 0 && j < value[WIDTH] - 1 && i > 0 && i < value[HEIGHT] && tab[i][j] != ' ')
+	if (j > 0 && j < value[WIDTH] - 1 && i > 0 &&
+			i < value[HEIGHT] && tab[i][j] != ' ')
 		return (0);
 	return (1);
 }
@@ -91,7 +94,7 @@ char	parse_colle(char **tab, char *pattern, int *value)
 	}
 	print_colle(pattern[0], value);
 	value[FOUND] = 1;
-	return (1);	
+	return (1);
 }
 
 void	print_colle(char colle, int *value)
@@ -112,4 +115,3 @@ void	print_colle(char colle, int *value)
 		ft_putnbr(value[WIDTH] + 1);
 	ft_putchar(']');
 }
-

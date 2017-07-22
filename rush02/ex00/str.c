@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:55:10 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 16:09:30 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 17:38:10 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_putstr(char *str)
 		++i;
 	write(1, str, i);
 }
+
 void	ft_putnbr(int nb)
 {
 	int		tmp;
@@ -48,4 +49,3 @@ void	ft_putnbr(int nb)
 		length /= 10;
 	}
 }
-
