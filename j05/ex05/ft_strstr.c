@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/07 10:40:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/07 11:14:17 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 18:09:41 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,12 @@ char	*ft_strstr(char *str, char *to_find)
 int		main(void)
 {
 	char	str[] = "Chaine a trouver";
-	char	to_find[] = "";
-	char	result;
+	char	to_find[] = "a t";
+	char	*result;
 
-	result = '\n';
-	result = *ft_strstr(str, to_find);
-	printf("%c\n", result);
-	result = *strstr(str, to_find);
-	printf("%c", result);
+	result = ft_strstr(str, to_find);
+	printf("%s\n", result);
+	result = strstr(str, to_find);
+	printf("%s\n", result);
 	
 }

@@ -1,5 +1,6 @@
-ABBBC
-B   B
-Bg  B
-B   B
-ABBBC
+ABBBBBC
+B     B
+B     B
+B     B
+B     B
+ABBBBBC

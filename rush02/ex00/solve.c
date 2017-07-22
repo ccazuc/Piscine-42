@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:06:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 17:40:53 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 18:59:52 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,14 +104,14 @@ void	print_colle(char colle, int *value)
 	ft_putstr("[colle-0");
 	ft_putchar(colle);
 	ft_putstr("] [");
+	if (value[WIDTH] == -1)
+		ft_putnbr(value[WIDTH] + 1);
+	else
+		ft_putnbr(value[WIDTH]);
+	ft_putstr("] [");
 	if (value[HEIGHT] == 1)
 		ft_putnbr(value[HEIGHT]);
 	else
 		ft_putnbr(value[HEIGHT] + 1);
-	ft_putstr("] [");
-	if (value[WIDTH] == 1)
-		ft_putnbr(value[WIDTH]);
-	else
-		ft_putnbr(value[WIDTH] + 1);
 	ft_putchar(']');
 }
