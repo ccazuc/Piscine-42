@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:08:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 12:58:30 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 14:44:52 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,18 @@ t_list	*create_elem(char data)
 
 char	list_push_back(t_list **begin_list, char data)
 {
-	t_list	*result;
 	t_list	*list;
 
-	if (!begin_list)
+	if (!*begin_list)
 	{
 		*begin_list = create_elem(data);
 		return (0);
 	}
-	if (!(result = create_elem(data)))
-		return (0);
-	while (list)
+	list = *begin_list;
+	while (list->next)
 		list = list->next;
-	list->next = result;
+	list->next = create_elem(data);
+	//printf("list_push_back char: '%c', char_value: %d\n", data, data);
 	return (1);
 }
 
@@ -65,8 +64,8 @@ char	list_push_back_buffer(t_list **begin_list, char *buffer)
 	{
 		if (!begin_list)
 			*begin_list = create_elem(buffer[i]);
-		else if (!(list_push_back(begin_list, buffer[i])))
-			return (0);
+		else 
+			list_push_back(begin_list, buffer[i]);
 	}
 	return (1);
 }
