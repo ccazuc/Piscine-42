@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   solve.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/22 12:02:08 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 15:34:14 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/22 15:21:55 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/22 15:22:53 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str.h"
-#include "parser.h"
+#ifndef SOLVE_H
+# define SOLVE_H
+# define WIDTH 0
+# define HEIGHT 1
+# define FOUND 2
 
-int		main(void)
-{
-	char	**result;
-	int		i;
-	int		j;
-
-	result = parse_stdin();
-	check_colle(result);
-	i = -1;
-	/*while (result[++i])
-	{
-		j = -1;
-		while (result[i][++j])
-			ft_putchar(result[i][j]);
-	}*/
-	ft_putchar('\n');
-	return (0);	
-}
+#endif
