@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 19:25:09 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 19:44:39 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,28 +83,25 @@ int		get_row_len(t_list *begin_list, int row)
 char	**conv_linked_list(t_list *begin_list, int tot_len)
 {
 	char	**result;
-	int		nb_row;
-	int		j;
-	int		i;
-	int		cur_row_len;
+	int		value[4];
 	t_list	*list;
 
 	tot_len++;
-	nb_row = get_nb_row(begin_list);
-	if (!(result = malloc((nb_row + 1) * sizeof(*result))))
+	value[NB_ROW] = get_nb_row(begin_list);
+	if (!(result = malloc((value[NB_ROW] + 1) * sizeof(*result))))
 		return (NULL);
-	result[nb_row] = NULL;
-	i = -1;
+	result[value[NB_ROW]] = NULL;
+	value[I] = -1;
 	list = begin_list;
-	while (++i < nb_row)
+	while (++value[I] < value[NB_ROW])
 	{
-		j = -1;
-		cur_row_len = get_row_len(begin_list, i);
-		if (!(result[i] = malloc((cur_row_len + 1) * sizeof(**result))))
+		value[J] = -1;
+		value[CUR_ROW_LEN] = get_row_len(begin_list, value[I]);
+		if (!(result[value[I]] = malloc((value[CUR_ROW_LEN] + 1) * sizeof(**result))))
 			return (NULL);
-		while (++j < cur_row_len)
-			result[i][j] = get_char_from_row(begin_list, i, j);
-		result[i][j] = '\0';
+		while (++value[J] < value[CUR_ROW_LEN])
+			result[value[I]][value[J]] = get_char_from_row(begin_list, value[I], value[J]);
+		result[value[I]][value[J]] = '\0';
 	}
 	clear_list(begin_list);
 	return (result);
@@ -127,5 +124,5 @@ char	**parse_stdin()
 		buffer[data_read] = '\0';
 		list_push_back_buffer(&list, buffer);
 	}
-	return conv_linked_list(list, tot_len);
+	return (conv_linked_list(list, tot_len));
 }
