@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:21:55 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 15:22:53 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 15:34:47 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 # define WIDTH 0
 # define HEIGHT 1
 # define FOUND 2
+
+void	check_colle(char **tab);
 
 #endif
