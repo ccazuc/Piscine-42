@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:56:04 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 12:56:24 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 16:07:06 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	ft_putnbr(int nb);
 
 #endif

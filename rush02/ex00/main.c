@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:02:08 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 15:51:52 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 16:38:10 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int		main(void)
 
 	result = parse_stdin();
 	check_colle(result);
-	i = -1;
-	/*while (result[++i])
+	/*i = -1;
+	while (result[++i])
 	{
 		j = -1;
 		while (result[i][++j])

@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:21:55 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 15:53:07 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 16:09:06 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 
 void	check_colle(char **tab);
 char	parse_colle(char **tab, char *pattern, int *value);
+void	print_colle(char colle, int *value);
 
 #endif
