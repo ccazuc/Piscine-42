@@ -6,17 +6,15 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 17:39:30 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 19:25:09 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "ft_list.h"
 #include "parser.h"
 #include "list_utils.h"
-#include <stdio.h>
 
 int		get_nb_row(t_list *begin_list)
 {
@@ -97,20 +95,15 @@ char	**conv_linked_list(t_list *begin_list, int tot_len)
 		return (NULL);
 	result[nb_row] = NULL;
 	i = -1;
-	//printf("number row: %d\n", nb_row);
 	list = begin_list;
 	while (++i < nb_row)
 	{
 		j = -1;
 		cur_row_len = get_row_len(begin_list, i);
-		//printf("cur_row_len: %d\n", cur_row_len);
 		if (!(result[i] = malloc((cur_row_len + 1) * sizeof(**result))))
 			return (NULL);
 		while (++j < cur_row_len)
-		{
 			result[i][j] = get_char_from_row(begin_list, i, j);
-			//printf("char i: %d j: %d char: '%c', char_value: %d\n", i, j, result[i][j], result[i][j]);
-		}
 		result[i][j] = '\0';
 	}
 	clear_list(begin_list);
@@ -130,7 +123,6 @@ char	**parse_stdin()
 	list = NULL;
 	while ((data_read = read(0, buffer, BUFF_LEN - 1)) > 0)
 	{
-		//printf("data read: %d\n", data_read);
 		tot_len += data_read;
 		buffer[data_read] = '\0';
 		list_push_back_buffer(&list, buffer);

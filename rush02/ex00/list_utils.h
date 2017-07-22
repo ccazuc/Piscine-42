@@ -6,11 +6,9 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:15:48 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 17:41:04 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 19:24:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ft_list.h"
 
 #ifndef LIST_UTILS_H
 # define LIST_UTILS_H
