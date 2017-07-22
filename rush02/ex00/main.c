@@ -6,12 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:02:08 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 15:34:14 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 15:51:52 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "str.h"
 #include "parser.h"
+#include "solve.h"
 
 int		main(void)
 {

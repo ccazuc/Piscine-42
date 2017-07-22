@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solve.h                                            :+:      :+:    :+:   */
+/*   check_dim.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/22 15:21:55 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 15:53:07 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/22 15:36:16 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/22 15:58:12 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SOLVE_H
-# define SOLVE_H
-# define WIDTH 0
-# define HEIGHT 1
-# define FOUND 2
+int		get_width(char **tab)
+{
+	int		j;
 
-void	check_colle(char **tab);
-char	parse_colle(char **tab, char *pattern, int *value);
 
-#endif
+	j = 0;
+	if (tab[0])
+		while (tab[0][j])
+			++j;
+	return (j);
+}
+
+int		get_height(char **tab)
+{
+	int		i;
+
+	i = 0;
+	while (tab[i])
+		++i;
+	return (i);
+}
