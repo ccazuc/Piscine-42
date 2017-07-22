@@ -6,11 +6,12 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 18:55:31 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/20 14:14:50 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/21 13:10:30 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
+#include <stdlib.h>
 
 t_list	*ft_list_push_params(int ac, char **av)
 {
@@ -28,5 +29,5 @@ t_list	*ft_list_push_params(int ac, char **av)
 		result = ft_create_elem(av[i]);
 		result->next = tmp;
 	}
-	return (first); 
+	return (result); 
 }

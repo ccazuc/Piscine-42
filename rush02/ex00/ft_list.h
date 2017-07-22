@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/13 10:46:30 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/21 13:22:55 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/22 12:06:26 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/22 12:07:51 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-#include <stdlib.h>
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
+typedef struct		s_list
 {
-	t_list	*list;
-	t_list	*prev;
+	struct s_list	*next;
+	char			data;
+}					t_list;
 
-	list = *begin_list;
-	prev = NULL;
-	while (list)
-	{
-		if ((*cmp)(list->data, data_ref) == 0)
-		{
-			prev->next = list->next;
-			free(list);			
-		}
-		prev = list;
-		list = list->next;
-	}
-}
+#endif

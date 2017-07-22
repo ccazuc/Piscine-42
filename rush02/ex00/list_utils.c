@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/13 10:46:30 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/21 13:22:55 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/22 12:08:15 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/22 12:15:19 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include <stdlib.h>
 
-void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
+t_list	create_elem(char data)
 {
-	t_list	*list;
-	t_list	*prev;
+	t_list	*result;
 
-	list = *begin_list;
-	prev = NULL;
-	while (list)
+	if (!(result = malloc(1 * sizeof(*result))))
+		return (NULL);
+	result->next = NULL;
+	result->data = data;
+	return (result);
+}
+
+void	list_push_back(t_list *begin_list, char data)
+{
+	t_list	*result;
+	t_list	*list;
+
+	if (!begin_list)
 	{
-		if ((*cmp)(list->data, data_ref) == 0)
-		{
-			prev->next = list->next;
-			free(list);			
-		}
-		prev = list;
-		list = list->next;
+		begin_list = create_elem(data);
+		return ;
 	}
+	result = create_elem(data);
+	while (list)
+		list = list->next;
+	list->next = result;
 }

@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/13 10:46:30 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/21 13:22:55 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/22 12:23:20 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include <fcntl.h>
 #include <stdlib.h>
+#include "ft_list.h"
 
-void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
+char	**conv_linked_list(t_list *begin_list)
 {
-	t_list	*list;
-	t_list	*prev;
+	
+}
 
-	list = *begin_list;
-	prev = NULL;
-	while (list)
+char	**parse_stdin()
+{
+	int		tot_len;
+	int		data_read;
+	char	*buffer;
+
+	if (!(buffer = malloc(BUFF_LEN * sizeof(*buffer))))
+		return (NULL);
+	tot_len = 0;
+	while ((data_red = read(0, buffer, BUFF_LEN - 1)) > 0)
 	{
-		if ((*cmp)(list->data, data_ref) == 0)
-		{
-			prev->next = list->next;
-			free(list);			
-		}
-		prev = list;
-		list = list->next;
-	}
+		
+	}	
 }
