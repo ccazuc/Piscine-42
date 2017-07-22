@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:06:14 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 16:50:35 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 17:24:41 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char	check_char(char **tab, char *pattern, int *value, int *coord)
 		//printf("pattern 7, colle: %c, char: '%c', i: %d, %dj: \n", pattern[0], tab[i][j], i, j);
 		return (0);
 	}
+	if (j > 0 && j < value[WIDTH] - 1 && i > 0 && i < value[HEIGHT] && tab[i][j] != ' ')
+		return (0);
 	return (1);
 }
 
