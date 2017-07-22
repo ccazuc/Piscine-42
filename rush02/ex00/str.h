@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   str.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/08 10:14:23 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 12:51:52 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/22 12:56:04 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/22 12:56:24 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
-int		ft_atoi(char *str);
+#ifndef STR_H
+# define STR_H
 
-int		main(int argc, char **argv)
-{
-	if (argc <= 2)
-		return (0);
-	rush(ft_atoi(argv[1]), ft_atoi(argv[2]));
-	return (0);
-}
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+
+#endif

@@ -6,14 +6,28 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:08:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 12:30:14 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/22 12:58:30 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include <stdlib.h>
 
-t_list	create_elem(char data)
+void	clear_list(t_list *begin_list)
+{
+	t_list	*list;
+	t_list	*next;
+
+	list = begin_list;
+	while (list)
+	{
+		next = list->next;
+		list->next = NULL;
+		free(list);
+	}
+}
+
+t_list	*create_elem(char data)
 {
 	t_list	*result;
 
@@ -35,7 +49,7 @@ char	list_push_back(t_list **begin_list, char data)
 		return (0);
 	}
 	if (!(result = create_elem(data)))
-		return ;
+		return (0);
 	while (list)
 		list = list->next;
 	list->next = result;
@@ -50,7 +64,7 @@ char	list_push_back_buffer(t_list **begin_list, char *buffer)
 	while (buffer[++i])
 	{
 		if (!begin_list)
-			begin_list = create_elem(buffer[i]);
+			*begin_list = create_elem(buffer[i]);
 		else if (!(list_push_back(begin_list, buffer[i])))
 			return (0);
 	}

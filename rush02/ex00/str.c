@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   str.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/08 10:14:23 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/22 12:51:52 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/22 12:55:10 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/22 12:55:59 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
-int		ft_atoi(char *str);
+#include <unistd.h>
 
-int		main(int argc, char **argv)
+void	ft_putchar(char c)
 {
-	if (argc <= 2)
-		return (0);
-	rush(ft_atoi(argv[1]), ft_atoi(argv[2]));
-	return (0);
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i])
+		++i;
+	write(1, str, i);
 }
