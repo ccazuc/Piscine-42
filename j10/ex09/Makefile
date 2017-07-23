@@ -2,10 +2,19 @@ CC=gcc
 
 CFLAGS=-Wall -Werror -Wextra
 
-EXEC=libft.a
+EXEC=colle-2
 
-all:
-	$(CC) $(CFLAGS) do_op.c main.c check_params.c ft_atoi.c handle_calc.c handle_error.c handle_str.c
+SRC=check_dim.c list_utils.c main.c parser.c solve.c str.c
+
+OBJ=$(SRC:.c=.o)
+
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+		$(CC) -o $@ $^
+
+%.o: %.c
+		$(CC) -o $@ -c $<
 
 clean:
-	rm -f a.out
+		rm -rf *.o

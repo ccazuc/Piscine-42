@@ -4,11 +4,17 @@ CFLAGS=-Wall -Werror -Wextra
 
 EXEC=ft_display_file
 
-all:
-	$(CC) $(CFLAGS) -o $(EXEC) ft_display_file.c
+SRC=ft_display_file.c
 
-fclean:
-	rm -rf $(EXEC)
+OBJ=$(SRC:.c=.o)
+
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+		$(CC) -o $@ $^
+
+%.o: %.c
+		$(CC) -o $@ -c $<
 
 clean:
-	rm -rf ft_display_file.o
+		rm -rf *.o

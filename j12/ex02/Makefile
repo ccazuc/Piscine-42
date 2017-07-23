@@ -2,13 +2,19 @@ CC=gcc
 
 CFLAGS=-Wall -Werror -Wextra
 
-EXEC=ft_tail
+EXEC=colle-2
 
-all:
-	$(CC) $(CFLAGS) -o $(EXEC) ft_tail.c handle_error.c handle_error_msg.c handle_stdin.c parse_args.c print_files.c str.c
+SRC=check_dim.c list_utils.c main.c parser.c solve.c str.c
 
-fclean:
-	rm -rf $(EXEC)
+OBJ=$(SRC:.c=.o)
+
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+		$(CC) -o $@ $^
+
+%.o: %.c
+		$(CC) -o $@ -c $<
 
 clean:
-	rm -rf ft_tail.o
+		rm -rf *.o

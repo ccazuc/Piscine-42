@@ -4,10 +4,17 @@ CFLAGS=-Wall -Werror -Wextra
 
 EXEC=colle-2
 
-all:
-	$(CC) $(CFLAGS) -o $(EXEC) main.c check_dim.c list_utils.c parser.c solve.c str.c
+SRC=check_dim.c list_utils.c main.c parser.c solve.c str.c
 
-fclean:
-	rm -f $(EXEC)
+OBJ=$(SRC:.c=.o)
 
-re: fclean all
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+		$(CC) -o $@ $^
+
+%.o: %.c
+		$(CC) -o $@ -c $<
+
+clean:
+		rm -rf *.o

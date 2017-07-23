@@ -4,11 +4,17 @@ CFLAGS=-Wall -Werror -Wextra
 
 EXEC=ft_cat
 
-all:
-	$(CC) $(CFLAGS) -o $(EXEC) ft_cat.c
+SRC=ft_cat.c
 
-fclean:
-	rm -rf $(EXEC)
+OBJ=$(SRC:.c=.o)
+
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+		$(CC) -o $@ $^
+
+%.o: %.c
+		$(CC) -o $@ -c $<
 
 clean:
-	rm -rf ft_cat.o
+		rm -rf *.o
