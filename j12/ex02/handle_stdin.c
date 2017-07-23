@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/19 14:37:35 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/20 11:56:30 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/23 14:20:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void	read_stdin(int char_nb, int value_in_c)
+void	read_stdin(int char_nb)
 {
 	char	*buffer;
 	int		i;

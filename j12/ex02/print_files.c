@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:27:33 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/20 12:59:05 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/23 14:20:26 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	print_files(int argc, char **argv, int char_nb, int value_in_c)
 
 	multiple_files = (argc > 4 - value_in_c ? 1 : 0);
 	if (argc == 2)
-		read_stdin(char_nb, value_in_c);
+		read_stdin(char_nb);
 	else if (multiple_files)
 		print_multiple_files(argc, argv, 3 - value_in_c, char_nb);
 	else

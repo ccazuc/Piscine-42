@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:22:33 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 13:41:36 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/23 14:19:41 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 int		main(int argc, char **argv)
 {
-	int		multiple_files;
 	int		args_value;
 	int		value_in_c;
 

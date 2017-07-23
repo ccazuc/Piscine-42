@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:30:38 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/20 11:46:23 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/23 14:21:01 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_atoi(char *str, char offset)
 
 	result = 0;
 	i = offset - 1;
-	if (str[offset] == '-')
+	if (str[(int)offset] == '-')
 		++i;
 	if (!str[i + 1])
 		return (-1);

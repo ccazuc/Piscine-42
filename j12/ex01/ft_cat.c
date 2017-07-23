@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/17 15:15:24 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 19:04:54 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/23 14:18:11 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,11 @@ int		main(int argc, char **argv)
 	char	*bin_name;
 
 	i = 0;
+	if (argc == 1)
+	{
+		read_stdin();
+		return (0);
+	}
 	bin_name = argv[0];
 	while (++i < argc)
 		print_file(argv[0], argv[i]);

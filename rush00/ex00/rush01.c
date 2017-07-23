@@ -6,16 +6,11 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 12:37:18 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/08 12:40:12 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/23 12:06:52 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	rush(int x, int y)
 {
@@ -44,10 +39,4 @@ void	rush(int x, int y)
 		}
 		ft_putchar('\n');
 	}
-}
-
-int		main(void)
-{
-	rush(20, 20);
-	return (0);
 }

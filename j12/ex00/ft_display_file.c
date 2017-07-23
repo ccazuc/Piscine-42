@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 19:01:47 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/18 19:02:12 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/23 14:09:57 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int		main(int argc, char **argv)
 	int		read_len;
 	char	tab[1000];
 
-	if (argc != 2)
+	if (argc == 1)
+		write(1, "File name missing.\n", 19);
+	else if (argc != 2)
 	{
 		write(1, "Too many arguments.\n", 20);
 		return (0);

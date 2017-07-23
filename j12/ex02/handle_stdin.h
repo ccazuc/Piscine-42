@@ -6,13 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/19 14:59:09 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/19 15:01:48 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/23 14:20:42 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HANDLE_STDIN_H
 # define HANDLE_STDIN_H
 
-void	read_stdin(int char_nb, int value_in_c);
+void	read_stdin(int char_nb);
 
 #endif
