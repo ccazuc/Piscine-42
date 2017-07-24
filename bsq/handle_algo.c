@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 14:35:46 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 16:58:54 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/24 18:38:30 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "ft_atoi.h"
 #include "handle_algo.h"
 #include "check_map.h"
+#include "solve.h"
+#include "print_result.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -23,10 +25,11 @@
 
 void	execute_algo(char *file_name)
 {
-	int		fd;
-	t_map	*map;
-	int		i;
-	int		j;
+	int			fd;
+	t_map		*map;
+	t_result	*result;
+	//int		i;
+	//int		j;
 
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
@@ -38,15 +41,17 @@ void	execute_algo(char *file_name)
 		return ;
 	map->tab = parse_file(file_name);
 	fill_map(map);
-	i = -1;
+	/*i = -1;
 	while (map->tab[++i])
 	{
 		j = -1;
 		while (map->tab[i][++j])
 			printf("%c", map->tab[i][j]);
-	}
-	printf("\n");
+	}*/
 	check_map_valid(*map);
+	result = solve(*map);
+	printf("x: %d, y: %d, width: %d\n", result->x, result->y, result->width);
+	print_result(map, result);
 }
 
 void	fill_map(t_map *map)
@@ -76,12 +81,15 @@ void	fill_map(t_map *map)
 
 void	check_map_valid(t_map map)
 {
-	if (!check_row_len(map))
+	int		row_len;
+
+	if (!(row_len = check_row_len(map)))
 	{
 		printf("map_error in check_row_len\n");
 		map_error();
 		return ;
 	}
+	map.row_len = row_len;
 	if (!check_row_value(map))
 	{
 		printf("map_error in check_row_value\n");

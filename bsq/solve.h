@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str.h                                              :+:      :+:    :+:   */
+/*   solve.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/24 15:30:10 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 18:35:48 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/24 17:57:38 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/24 18:25:49 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STR_H
-# define STR_H
+#ifndef SOLVE_H
+# define SOLVE_H
+# include "map.h"
 
-void	ft_putstr(char *str);
-void	ft_putstrerr(char *str);
-int		ft_strlen(char *str);
-char	*ft_strndup(char *str, int n);
-void	map_error(void);
-void	ft_putchar(char c);
+typedef struct	s_result
+{
+	int			x;
+	int			y;
+	int			width;
+}				t_result;
+
+t_result	*solve(t_map map);
+int			get_valid_width(t_map map, int x, int y);
+int			get_valid_height(t_map map, int x, int y);
+char		is_valid(t_map map, int x, int y, int width);
 
 #endif

@@ -4,7 +4,7 @@ CFLAGS=-Wall -Werror -Wextra
 
 EXEC=bsq
 
-SRC=ft_atoi.c handle_algo.c list_utils.c main.c parser.c str.c check_map.c
+SRC=ft_atoi.c handle_algo.c list_utils.c main.c parser.c str.c check_map.c solve.c math.c str2.c print_result.c
 
 OBJ=$(SRC:.c=.o)
 

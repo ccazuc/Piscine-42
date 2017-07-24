@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 16:15:23 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 16:56:30 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/24 17:55:26 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,15 @@ char	check_row_value(t_map map)
 	{
 		j = -1;
 		while (map.tab[i][++j])
-			if (j == map.row_len - 1 && map.tab[i][j] != '\n')
+			if (j == map.row_len && map.tab[i][j] != '\n')
+			{
+				printf("invalid char: '%c', i: %d, j: %d, map_row_len: %d\n", map.tab[i][j], i, j, map.row_len);
 				return (0);
+			}
 			else if (j < map.row_len - 1 && map.tab[i][j] != map.c_empty
 					&& map.tab[i][j] != map.c_bloc && map.tab[i][j] != map.c_full)
 			{
-				printf("invalid char: '%c', i: %d, j: %d\n", map.tab[i][j], i, j);
+				printf("invalid char: '%c', i: %d, j: %d, map_row_len: %d\n", map.tab[i][j], i, j, map.row_len);
 				return (0);
 			}
 	}
