@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_algo.h                                      :+:      :+:    :+:   */
+/*   check_map.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/24 15:24:09 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 16:37:27 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/07/24 16:34:26 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/07/24 16:34:59 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HANDLE_ALGO_H
-# define HANDLE_ALGO_H
-# include "map.h"
+#ifndef CHECK_MAP_H
+# define CHECK_MAP_H
 
-void	execute_algo(char *file_name);
-void	fill_map(t_map *map);
-void	check_map_valid(t_map map);
+char	check_row_len(t_map map);
+char	check_row_value(t_map map);
 
 #endif
