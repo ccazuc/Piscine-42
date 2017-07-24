@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 14:35:46 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 18:38:30 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/24 19:19:12 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	execute_algo(char *file_name)
 	}*/
 	check_map_valid(*map);
 	result = solve(*map);
-	printf("x: %d, y: %d, width: %d\n", result->x, result->y, result->width);
+	//printf("x: %d, y: %d, width: %d\n", result->x, result->y, result->width);
 	print_result(map, result);
 }
 
@@ -59,7 +59,7 @@ void	fill_map(t_map *map)
 	int		str_len;
 
 	str_len = ft_strlen(map->tab[0]);
-	printf("%s\n", map->tab[0]);
+	//printf("%s\n", map->tab[0]);
 	if (str_len <= 4)
 	{
 		printf("map_error str_len: %d\n", str_len);
@@ -76,7 +76,7 @@ void	fill_map(t_map *map)
 	map->c_empty = map->tab[0][str_len - 4];
 	map->c_bloc = map->tab[0][str_len - 3];
 	map->c_full = map->tab[0][str_len - 2];
-	printf("nb_row: %d, empty: %c, bloc: %c, full: %c\n", map->nb_row, map->c_empty, map->c_bloc, map->c_full);	
+	//printf("nb_row: %d, empty: %c, bloc: %c, full: %c\n", map->nb_row, map->c_empty, map->c_bloc, map->c_full);	
 }
 
 void	check_map_valid(t_map map)
