@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 17:57:05 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 19:14:42 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/24 20:25:06 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void	check_width(int width, int x, int y, t_result *result, t_map map)
+void		check_width(int width, int x, int y, t_result *result, t_map map)
 {
 	if (width > result->width)
 		while (width > result->width)
@@ -28,7 +28,6 @@ void	check_width(int width, int x, int y, t_result *result, t_map map)
 			}
 			--width;
 		}
-					
 }
 
 t_result	*solve(t_map map)
@@ -38,7 +37,7 @@ t_result	*solve(t_map map)
 	int			j;
 	int			max_width;
 	int			width;
-	
+
 	if (!(result = malloc(1 * sizeof(*result))))
 		return (NULL);
 	i = 0;
@@ -50,14 +49,16 @@ t_result	*solve(t_map map)
 		j = -1;
 		while (map.tab[i][++j])
 		{
-			width = min(get_valid_width(map, i, j), get_valid_height(map, i, j));
+			width = min(get_valid_width(map, i, j),
+					get_valid_height(map, i, j));
 			//printf("width: %d, i: %d, j: %d, is_valid: %d, width: %d, height: %d\n", width, i, j, is_valid(map, i, j, width), get_valid_width(map, i, j), get_valid_height(map, i, j));
 			check_width(width, i, j, result, map);
 		}
 	}
 	return (result);
 }
-char	is_valid(t_map map, int x, int y, int width)
+
+char		is_valid(t_map map, int x, int y, int width)
 {
 	int		i;
 	int		j;
@@ -71,27 +72,24 @@ char	is_valid(t_map map, int x, int y, int width)
 	{
 		j = y;
 		while (++j < j_max && map.tab[i][j])
-			if (map.tab[i][j] != map.c_empty)
-			{
-				//printf("NOT VALID: x: %d, y: %d, i: %d, j: %d\n", x, y, i, j);
+			if (map.tab[i][j] != map.c_empty && map.tab[i][j] != map.c_full)
 				return (0);
-			}
 	}
 	return (1);
 }
 
-int		get_valid_width(t_map map, int x, int y)
+int			get_valid_width(t_map map, int x, int y)
 {
 	int		j;
 
-	j = y;
+	j = y - 1;
 	while (map.tab[x][++j])
 		if (map.tab[x][j] != map.c_empty)
-		   return (j - y);
-	return (j - y);	
+			return (j - y);
+	return (j - y);
 }
 
-int		get_valid_height(t_map map, int x, int y)
+int			get_valid_height(t_map map, int x, int y)
 {
 	int		i;
 
@@ -100,4 +98,4 @@ int		get_valid_height(t_map map, int x, int y)
 		if (map.tab[i][y] != map.c_empty)
 			return (i - x);
 	return (i - x);
-}	
+}

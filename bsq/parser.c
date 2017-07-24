@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 15:48:58 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/24 19:49:56 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ char	**parse_file(char *file_name)
 	list = NULL;
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
-		return (NULL); 
+		return (NULL);
 	while ((data_read = read(fd, buffer, BUFF_LEN - 1)) > 0)
 	{
 		buffer[data_read] = '\0';
