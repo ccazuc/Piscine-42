@@ -6,12 +6,11 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 16:15:23 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:10:22 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 16:16:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
-#include <stdio.h>
 
 long	check_row_len(t_map map)
 {

@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:14:16 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 16:21:50 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,15 +120,18 @@ char	**parse_file(int fd)
 	int		data_read;
 	char	*buffer;
 	t_list	*list;
+	char	has_read;
 
 	if (!(buffer = malloc(4000000 * sizeof(*buffer))))
 		return (NULL);
 	list = NULL;
+	has_read = 0;
 	while ((data_read = read(fd, buffer, 4000000 - 1)) > 0)
 	{
 		buffer[data_read] = '\0';
 		list_push_back_buffer(&list, buffer);
+		has_read = 1;
 	}
 	free(buffer);
-	return (conv_linked_list(list));
+	return (has_read ? conv_linked_list(list) : NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 14:35:46 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:11:35 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 16:24:07 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,12 @@ void	execute_algo(char *file_name)
 	}
 	if (!(map = malloc(1 * sizeof(*map))))
 		return ;
-	map->tab = parse_file(fd);
-	if (!fill_map(map))
+	if (!(map->tab = parse_file(fd)))
+	{
+		map_error();
 		return ;
-	if (!check_map_valid(*map))
+	}
+	if (!fill_map(map) || !check_map_valid(*map))
 		return ;
 	result = solve(*map);
 	print_result(*map, result);

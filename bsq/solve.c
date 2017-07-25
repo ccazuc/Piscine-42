@@ -6,14 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 17:57:05 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:15:06 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 16:15:59 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solve.h"
 #include "math.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 void		check_width(int width, int x, int y, t_result *result, t_map map)
 {
