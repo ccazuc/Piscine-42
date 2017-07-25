@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 14:35:46 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 13:52:27 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 15:12:35 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,19 @@ void	execute_algo(char *file_name)
 	close(fd);
 	if (!(map = malloc(1 * sizeof(*map))))
 		return ;
-	printf("parse started\n");
+	//printf("parse started\n");
 	map->tab = parse_file(file_name);
-	printf("parse ended\n");
+	//printf("parse ended\n");
 	if (!fill_map(map))
 		return ;
 	if (!check_map_valid(*map))
 		return ;
-	printf("solve started\n");
+	//printf("solve started\n");
 	result = solve(*map);
-	printf("solve ended\n");
-	printf("empty: %c, full: %c, bloc: %c, nb_row: %d\n", map->c_empty, map->c_full, map->c_bloc, map->nb_row);
-	printf("x: %d, y: %d, width: %d\n", result->x, result->y, result->width);
-	print_result(map, result);
+	//printf("solve ended\n");
+	//printf("empty: %c, full: %c, bloc: %c, nb_row: %d\n", map->c_empty, map->c_full, map->c_bloc, map->nb_row);
+	//printf("x: %d, y: %d, width: %d\n", result->x, result->y, result->width);
+	print_result(*map, result);
 }
 
 char	fill_map(t_map *map)
@@ -65,17 +65,15 @@ char	fill_map(t_map *map)
 		return (0);
 	}
 	map->nb_row = ft_atoi(ft_strndup(map->tab[0], str_len - 3));
-	printf("ft_strndup: %s\n", ft_strndup(map->tab[0], str_len - 3));
-	printf("tab[0]: %s\n", map->tab[0]);
 	if (map->nb_row <= 0)
 	{
 		printf("map_error nb_row: %d\n", map->nb_row);
 		map_error();
 		return (0);
 	}
-	map->c_empty = map->tab[0][str_len - 3];
-	map->c_bloc = map->tab[0][str_len - 2];
-	map->c_full = map->tab[0][str_len - 1];
+	map->c_empty = map->tab[0][str_len - 4];
+	map->c_bloc = map->tab[0][str_len - 3];
+	map->c_full = map->tab[0][str_len - 2];
 	//printf("nb_row: %d, empty: %c, bloc: %c, full: %c\n", map->nb_row, map->c_empty, map->c_bloc, map->c_full);
 	return (1);
 }

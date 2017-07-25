@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 14:19:01 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 15:14:34 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,23 @@ int		get_nb_row(t_list *begin_list)
 		list = list->next;
 	}
 	return (nb_row);
+}
+
+	char	get_char_from_list(t_list *begin_list, long index)
+{
+	t_list	*list;
+	long	cur_index;
+
+	cur_index = 0;
+	list = begin_list;
+	while (list)
+	{
+		if (index < cur_index + list->data_len)
+			return (list->data[index - cur_index]);
+		cur_index += list->data_len;
+		list = list->next;
+	}
+	return (-1);
 }
 
 char	get_char_from_row(t_list *begin_list, int row, int column)
@@ -85,7 +102,7 @@ int		get_row_len(t_list *begin_list, int row)
 			{
 				++row_count;
 				if (row_count == row)
-					return (char_count);
+					return (row == 0 ? char_count + 1 : char_count);
 				char_count = 0;
 			}
 			++char_count;
@@ -100,8 +117,7 @@ char	**conv_linked_list(t_list *begin_list)
 	char	**result;
 	int		value[4];
 	t_list	*list;
-	int		i;
-	int		j;
+	long	count;
 
 	value[NB_ROW] = get_nb_row(begin_list);
 	if (!(result = malloc((value[NB_ROW] + 1) * sizeof(*result))))
@@ -109,7 +125,8 @@ char	**conv_linked_list(t_list *begin_list)
 	result[value[NB_ROW]] = NULL;
 	value[I] = -1;
 	list = begin_list;
-	printf("nb_row: %d\n", value[NB_ROW]);
+	//printf("nb_row: %d\n", value[NB_ROW]);
+	count = 0;
 	while (++value[I] < value[NB_ROW])
 	{
 		value[J] = -1;
@@ -120,22 +137,17 @@ char	**conv_linked_list(t_list *begin_list)
 			return (NULL);
 		while (++value[J] < value[CUR_ROW_LEN])
 		{
-			result[value[I]][value[J]] = get_char_from_row(begin_list,
-					value[I], value[J]);
-			printf("curr_char: '%c', curr_char_value: %d, i: %d, j: %d\n", get_char_from_row(begin_list, value[I], value[J]), get_char_from_row(begin_list, value[I], value[J]), value[I], value[J]);
+			//if (count % 100000 == 0)
+			//printf("char: '%c', count: %ld\n", get_char_from_list(begin_list, count), count);
+			result[value[I]][value[J]] = get_char_from_list(begin_list, count);
+			//result[value[I]][value[J]] = get_char_from_row(begin_list,
+			//		value[I], value[J]);
+			++count;
+			//printf("curr_char: '%c', curr_char_value: %d, i: %d, j: %d\n", get_char_from_row(begin_list, value[I], value[J]), get_char_from_row(begin_list, value[I], value[J]), value[I], value[J]);
 		}
 		result[value[I]][value[J]] = '\0';
 	}
 	clear_list(begin_list);
-	i = -1;
-	printf("start print\n");
-	while (result[++i])
-	{
-		j = -1;
-		while (result[i][++j])
-			printf("%c", result[i][j]);
-	}
-	printf("end print\n");
 	return (result);
 }
 

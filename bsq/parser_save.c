@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 12:59:03 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 14:34:01 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,21 @@ char	get_char_from_row(t_list *begin_list, int row, int column)
 	return (0);
 }
 
+char	get_char_from_list(t_list *begin_list, long index)
+{
+	t_list	*list;
+	long	cur_index;
+	list = begin_list;
+	while (list)
+	{
+		if (index < cur_index + data_len)
+			return (list->data[index - cur_index];
+		cur_index += list->data_len;
+		list = list->next;
+	}
+	return (-1);
+}
+
 int		get_row_len(t_list *begin_list, int row)
 {
 	int		i;
@@ -87,6 +102,7 @@ char	**conv_linked_list(t_list *begin_list)
 	char	**result;
 	int		value[4];
 	t_list	*list;
+	long	count;
 
 	value[NB_ROW] = get_nb_row(begin_list);
 	if (!(result = malloc((value[NB_ROW] + 1) * sizeof(*result))))
@@ -102,8 +118,12 @@ char	**conv_linked_list(t_list *begin_list)
 						* sizeof(**result))))
 			return (NULL);
 		while (++value[J] < value[CUR_ROW_LEN])
+		{
 			result[value[I]][value[J]] = get_char_from_row(begin_list,
 					value[I], value[J]);
+			printf("char: '%c', count: %d\n", get_char_from_list(begin_list, count), count);
+			++count;
+		}
 		result[value[I]][value[J]] = '\0';
 	}
 	clear_list(begin_list);

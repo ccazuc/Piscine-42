@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:08:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 14:09:35 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 15:13:32 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ t_list	*create_elem(char *data)
 		return (NULL);
 	result->next = NULL;
 	result->data = ft_strndup(data, ft_strlen(data));
+	result->data_len = ft_strlen(data);
 	return (result);
 }
 
@@ -86,12 +87,12 @@ char	list_push_back_buffer(t_list **begin_list, char *buffer)
 {
 		if (!*begin_list)
 		{
-			printf("created list\n");
+			//printf("created list\n");
 			*begin_list = create_elem(buffer);
 		}
 		else
 		{
-			printf("push back list\n");
+			//printf("push back list\n");
 			list_push_back(begin_list, buffer);
 		}
 	return (1);
