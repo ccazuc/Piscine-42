@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/19 18:03:54 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/19 18:04:02 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 19:13:33 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,13 @@ int		get_end_pos(int i, char *str)
 {
 	char	tmp;
 	int		start;
+	int		j;
 
 	start = i;
+	j = -1;
+	while (str[++j])
+		if (str[j] < '0' || str[j] > '9')
+			return (i);
 	while (str[++i])
 	{
 		tmp = str[i];

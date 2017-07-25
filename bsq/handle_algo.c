@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 14:35:46 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 18:56:25 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 20:08:58 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ char	fill_map(t_map *map)
 	char	*row_len;
 
 	str_len = ft_strlen(map->tab[0]);
-	if (str_len < 4)
+	if (str_len <= 4)
 	{
 		printf("map_error str_len: %d\n", str_len);
 		map_error();
 		return (0);
 	}
-	row_len = ft_strndup(map->tab[0], str_len - 3);
+	row_len = ft_strndup(map->tab[0], str_len - 4);
 	map->nb_row = ft_atoi(row_len) + 1;
 	free(row_len);
 	if (map->nb_row <= 0)

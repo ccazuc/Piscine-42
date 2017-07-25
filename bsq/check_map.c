@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 16:15:23 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 18:57:09 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 20:06:49 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	check_row_value(t_map map)
 				return (0);
 			if (j <= map.row_len - 1 && map.tab[i][j] != map.c_empty &&
 					map.tab[i][j] != map.c_bloc && map.tab[i][j] != map.c_full)
+				return (0);
+			if (j <= map.row_len - 1 && map.tab[i][j] == map.c_full)
 				return (0);
 		}
 	}
