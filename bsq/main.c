@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 14:32:06 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 15:24:53 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 15:53:43 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		main(int argc, char **argv)
 
 	if (argc == 1)
 	{
-		//execute_stdin();
+		execute_algo(0);
 		return (0);
 	}
 	i = 0;

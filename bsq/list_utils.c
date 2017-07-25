@@ -6,14 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:08:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 15:13:32 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 16:11:23 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 #include "str.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 void	clear_list(t_list *begin_list)
 {
@@ -85,15 +84,9 @@ char	list_push_back(t_list **begin_list, char *data)
 
 char	list_push_back_buffer(t_list **begin_list, char *buffer)
 {
-		if (!*begin_list)
-		{
-			//printf("created list\n");
-			*begin_list = create_elem(buffer);
-		}
-		else
-		{
-			//printf("push back list\n");
-			list_push_back(begin_list, buffer);
-		}
+	if (!*begin_list)
+		*begin_list = create_elem(buffer);
+	else
+		list_push_back(begin_list, buffer);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:22:03 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 15:40:48 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 15:50:21 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # define I 2
 # define CUR_ROW_LEN 3
 
-char	**parse_file(char *file_name);
+char	**parse_file(int fd);
 
 #endif

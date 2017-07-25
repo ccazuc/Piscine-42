@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 18:32:54 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 15:13:59 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 16:12:00 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	print_result(t_map map, t_result *result)
 	int		j;
 
 	i = 0;
-	//printf("print_result start\n");
 	while (map.tab[++i])
 	{
 		j = -1;
@@ -29,12 +28,8 @@ void	print_result(t_map map, t_result *result)
 			if (i >= result->x && i < result->x + result->width &&
 					j >= result->y && j < result->y + result->width)
 				ft_putchar(map.c_full);
-				//printf("%c", map.c_full);
 			else
-				//printf("%c", map.tab[i][j]);
 				ft_putchar(map.tab[i][j]);
-				//printf("i: %d, j: %d, res_x: %d, res_y: %d, width: %d\n", i, j, result->x, result->y, result->width);
 		}
 	}
-	//printf("print_result end\n");
 }
