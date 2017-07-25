@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 17:57:05 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 15:00:50 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 16:15:06 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ t_result	*solve(t_map map)
 		{
 			width = min(get_valid_width(map, i, j),
 					get_valid_height(map, i, j));
-			//printf("width: %d, i: %d, j: %d, is_valid: %d, width: %d, height: %d\n", width, i, j, is_valid(map, i, j, width), get_valid_width(map, i, j), get_valid_height(map, i, j));
 			check_width(width, i, j, result, map);
 		}
 	}

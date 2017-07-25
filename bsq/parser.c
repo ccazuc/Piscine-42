@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:08:40 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 16:14:16 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		get_nb_row(t_list *begin_list)
 	return (nb_row);
 }
 
-	char	get_char_from_list(t_list *begin_list, long index)
+char	get_char_from_list(t_list *begin_list, long index)
 {
 	t_list	*list;
 	long	cur_index;
