@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:21:50 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 18:43:28 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,7 @@ char	**conv_linked_list(t_list *begin_list)
 		if (!(result[value[I]] = malloc((value[CUR_ROW_LEN] + 1)
 						* sizeof(**result))))
 			return (NULL);
-		while (++value[J] < value[CUR_ROW_LEN])
-		{
-			result[value[I]][value[J]] = get_char_from_list(begin_list, count);
-			++count;
-		}
+		fill_table(value, result, list, &count);
 		result[value[I]][value[J]] = '\0';
 	}
 	clear_list(begin_list);

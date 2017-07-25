@@ -6,27 +6,37 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 17:57:05 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:15:59 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 18:21:34 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solve.h"
 #include "math.h"
 #include <stdlib.h>
+#include <stdio.h>
 
-void		check_width(int width, int x, int y, t_result *result, t_map map)
+void		check_width(int x, int y, t_result *result, t_map map)
 {
-	if (width > result->width)
-		while (width > result->width)
+	int		width;
+	int		height;
+	int		total;
+
+	width = get_valid_width(map, x, y);
+	if (width <= result->width)
+		return ;
+	height = get_valid_height(map, x, y);
+	total = min(width, height);
+	while (total > result->width)
+	{
+		if (is_valid(map, x, y, total))
 		{
-			if (is_valid(map, x, y, width))
-			{
-				result->x = x;
-				result->y = y;
-				result->width = width;
-			}
-			--width;
+			result->x = x;
+			result->y = y;
+			result->width = total;
+			return ;
 		}
+		--total;
+	}
 }
 
 t_result	*solve(t_map map)
@@ -34,23 +44,20 @@ t_result	*solve(t_map map)
 	t_result	*result;
 	int			i;
 	int			j;
-	int			max_width;
-	int			width;
+	long		count;
 
 	if (!(result = malloc(1 * sizeof(*result))))
 		return (NULL);
 	i = 0;
-	max_width = 0;
-	width = 0;
 	result->width = 0;
-	while (map.tab[++i])
+	count = 0;
+	while (++i < map.nb_row - result->width)
 	{
 		j = -1;
-		while (map.tab[i][++j])
+		while (++j < map.row_len - result->width)
 		{
-			width = min(get_valid_width(map, i, j),
-					get_valid_height(map, i, j));
-			check_width(width, i, j, result, map);
+			check_width(i, j, result, map);
+			++count;
 		}
 	}
 	return (result);

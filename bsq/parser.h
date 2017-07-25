@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:22:03 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 15:50:21 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 18:44:27 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@
 # define J 1
 # define I 2
 # define CUR_ROW_LEN 3
+# include "ft_list.h"
 
 char	**parse_file(int fd);
+char	get_char_from_list(t_list *begin_list, long index);
+void	fill_table(int table[4], char **result,
+		t_list *begin_list, long *count);
 
 #endif

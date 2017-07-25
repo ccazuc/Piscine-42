@@ -6,13 +6,14 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 16:15:23 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:16:04 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 18:57:09 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
+#include <stdio.h>
 
-long	check_row_len(t_map map)
+int		check_row_len(t_map map)
 {
 	int		i;
 	int		j;
@@ -51,4 +52,14 @@ char	check_row_value(t_map map)
 		}
 	}
 	return (1);
+}
+
+char	check_nb_row(t_map map)
+{
+	int		i;
+
+	i = 0;
+	while (map.tab[i])
+		++i;
+	return (i == map.nb_row ? 1 : 0);
 }

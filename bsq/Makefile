@@ -1,10 +1,10 @@
 CC=gcc
 
-CFLAGS=-Wall -Werror -Wextra -O2
+CFLAGS=-Wall -Werror -Wextra -O3
 
 EXEC=bsq
 
-SRC=ft_atoi.c handle_algo.c list_utils.c main.c parser.c str.c check_map.c solve.c math.c str2.c print_result.c
+SRC=ft_atoi.c handle_algo.c list_utils.c main.c parser.c str.c check_map.c solve.c math.c str2.c print_result.c parser_init.c
 
 OBJ=$(SRC:.c=.o)
 
@@ -21,3 +21,5 @@ fclean:
 
 clean:
 		rm -rf *.o
+
+re: clean fclean all

@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:08:15 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:11:23 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 16:55:43 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	clear_list(t_list *begin_list)
 	{
 		next = list->next;
 		list->next = NULL;
+		free(list->data);
 		free(list);
 		list = next;
 	}
