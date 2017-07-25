@@ -6,14 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:05:00 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 18:43:28 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 20:16:50 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include <stdio.h>
 #include "ft_list.h"
 #include "parser.h"
 #include "list_utils.h"

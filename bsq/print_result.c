@@ -6,13 +6,12 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 18:32:54 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 16:12:00 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 20:17:25 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "print_result.h"
 #include "str.h"
-#include <stdio.h>
 
 void	print_result(t_map map, t_result *result)
 {
