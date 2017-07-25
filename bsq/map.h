@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 14:51:26 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/24 16:16:07 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 15:33:50 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 typedef struct	s_map
 {
 	char		**tab;
-	int			nb_row;
-	int			row_len;
+	long		nb_row;
+	long		row_len;
 	char		c_empty;
 	char		c_bloc;
 	char		c_full;

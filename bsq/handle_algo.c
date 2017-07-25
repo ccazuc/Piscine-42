@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 14:35:46 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 15:12:35 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/25 15:39:19 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	fill_map(t_map *map)
 	map->nb_row = ft_atoi(ft_strndup(map->tab[0], str_len - 3));
 	if (map->nb_row <= 0)
 	{
-		printf("map_error nb_row: %d\n", map->nb_row);
+		printf("map_error nb_row: %ld\n", map->nb_row);
 		map_error();
 		return (0);
 	}
@@ -80,7 +80,7 @@ char	fill_map(t_map *map)
 
 char	check_map_valid(t_map map)
 {
-	int		row_len;
+	long	row_len;
 
 	if (!(row_len = check_row_len(map)))
 	{
