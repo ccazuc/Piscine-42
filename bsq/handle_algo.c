@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/24 14:35:46 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/07/25 20:08:58 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/07/26 13:18:10 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 void	ft_free(t_map *map, t_result *result)
 {
@@ -41,12 +40,10 @@ void	execute_algo(char *file_name)
 	t_map		*map;
 	t_result	*result;
 
-	if (!file_name)
-		fd = 0;
-	else
-		fd = open(file_name, O_RDONLY);
+	fd = !file_name ? 0 : open(file_name, O_RDONLY);
 	if (fd == -1)
 	{
+		map_error();
 		return ;
 	}
 	if (!(map = malloc(1 * sizeof(*map))))
@@ -71,16 +68,14 @@ char	fill_map(t_map *map)
 	str_len = ft_strlen(map->tab[0]);
 	if (str_len <= 4)
 	{
-		printf("map_error str_len: %d\n", str_len);
 		map_error();
 		return (0);
 	}
 	row_len = ft_strndup(map->tab[0], str_len - 4);
 	map->nb_row = ft_atoi(row_len) + 1;
 	free(row_len);
-	if (map->nb_row <= 0)
+	if (map->nb_row <= 1)
 	{
-		printf("map_error nb_row: %ld\n", map->nb_row);
 		map_error();
 		return (0);
 	}
@@ -96,14 +91,12 @@ char	check_map_valid(t_map *map)
 
 	if (!(row_len = check_row_len(*map)))
 	{
-		printf("map_error in check_row_len\n");
 		map_error();
 		return (0);
 	}
 	map->row_len = row_len;
 	if (!check_row_value(*map) || !check_nb_row(*map))
 	{
-		printf("map_error in check_row_value\n");
 		map_error();
 		return (0);
 	}
